@@ -87,8 +87,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="gitignore .gitignore" />
+    <Content Include="LICENSE.txt" />
     <None Include="Logo.png" />
-    <Content Include="txt joueurs.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
