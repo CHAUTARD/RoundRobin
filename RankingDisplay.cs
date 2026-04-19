@@ -10,10 +10,10 @@ namespace RoundRobin
         public string Joueur { get; set; }
         public int Points { get; set; }
         public int Victoires { get; set; }
-        public int Défaites { get; set; }
+        public int Defaites { get; set; }  // Enlevé l'accent
         public string Abandons { get; set; }
         public int AbandonCount { get; set; }
-        public int MatchsJoués { get; set; }
-        public bool DépartagéH2H { get; set; } // Nouveau : indicateur de départage
+        public int MatchsJoues { get; set; }  // Enlevé l'accent
+        public bool DepartageH2H { get; set; }  // Enlevé l'accent
     }
 }

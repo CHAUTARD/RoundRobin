@@ -45,28 +45,23 @@ namespace RoundRobin
         {
             // Récupérer les informations de l'assembly
             Assembly assembly = Assembly.GetExecutingAssembly();
-            
+
             // Récupérer le copyright
             var copyrightAttribute = (AssemblyCopyrightAttribute)assembly
                 .GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false)
                 .FirstOrDefault();
-            
+
             // Récupérer la version
             Version version = assembly.GetName().Version;
-            
+
             // Construire le texte du copyright avec la version
-            string copyrightText = copyrightAttribute != null 
-                ? copyrightAttribute.Copyright 
+            string copyrightText = copyrightAttribute != null
+                ? copyrightAttribute.Copyright
                 : "Copyright © 2026 Patrick CH";
-            
-            string versionText = $"v{version.Major}.{version.Minor}.{version.Build}";
-            
-            // Mettre à jour le StatusStrip
-            // Si vous avez créé le StatusStrip via le Designer
-            if (ToolStripStatusLableCopyright != null && toolStripStatusLabel1 != null)
-            {
-                toolStripStatusLabel1.Text = $"{copyrightText} - {versionText}";
-            }
+
+            string versionText = $"v{version.Major}.{version.Minor}";
+
+            toolStripStatusLabel1.Text = $"{copyrightText} - {versionText}";
         }
 
         private void UpdateTabsState()
@@ -195,8 +190,8 @@ namespace RoundRobin
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                var departagéH2HCell = DataGridViewRankings.Rows[e.RowIndex].Cells["DépartagéH2H"];
-                if (departagéH2HCell != null && departagéH2HCell.Value is bool && (bool)departagéH2HCell.Value)
+                var departageH2HCell = DataGridViewRankings.Rows[e.RowIndex].Cells["DepartageH2H"];  // Enlevé l'accent
+                if (departageH2HCell != null && departageH2HCell.Value is bool && (bool)departageH2HCell.Value)
                 {
                     if (DataGridViewRankings.Columns[e.ColumnIndex].HeaderText == "Joueur")
                     {
@@ -241,6 +236,29 @@ namespace RoundRobin
 
             Match match = matchesForRound[e.RowIndex];
 
+            // Fond de couleur pastel pour toute la ligne selon l'état du match
+            if (match.IsPlayed())
+            {
+                // Abandon : fond rouge pastel
+                if (match.Result == MatchResult.Player1Abandoned || match.Result == MatchResult.Player2Abandoned)
+                {
+                    e.CellStyle.BackColor = Color.MistyRose;
+                    e.CellStyle.SelectionBackColor = Color.LightCoral;
+                }
+                // Match joué normalement : fond vert pastel
+                else
+                {
+                    e.CellStyle.BackColor = Color.Honeydew;
+                    e.CellStyle.SelectionBackColor = Color.LightGreen;
+                }
+            }
+            else
+            {
+                // Match non joué : fond blanc (par défaut)
+                e.CellStyle.BackColor = Color.White;
+                e.CellStyle.SelectionBackColor = SystemColors.Highlight;
+            }
+
             // Colonne Joueur1 (index 1)
             if (e.ColumnIndex == 1)
             {
@@ -253,6 +271,10 @@ namespace RoundRobin
                 {
                     e.CellStyle.Font = new Font(DataGridViewMatches.Font, FontStyle.Italic);
                     e.CellStyle.ForeColor = Color.Gray;
+                }
+                else
+                {
+                    e.CellStyle.ForeColor = Color.Black;
                 }
             }
             // Colonne Joueur2 (index 3)
@@ -268,6 +290,15 @@ namespace RoundRobin
                     e.CellStyle.Font = new Font(DataGridViewMatches.Font, FontStyle.Italic);
                     e.CellStyle.ForeColor = Color.Gray;
                 }
+                else
+                {
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+            }
+            else
+            {
+                // Autres colonnes : couleur de texte par défaut
+                e.CellStyle.ForeColor = Color.Black;
             }
         }
 
@@ -323,8 +354,8 @@ namespace RoundRobin
             }
 
             // Formater les joueurs départagés par confrontation directe
-            var departagéH2HCell = DataGridViewRankings.Rows[e.RowIndex].Cells["DépartagéH2H"];
-            if (departagéH2HCell != null && departagéH2HCell.Value is bool && (bool)departagéH2HCell.Value)
+            var departageH2HCell = DataGridViewRankings.Rows[e.RowIndex].Cells["DepartageH2H"];  // Enlevé l'accent
+            if (departageH2HCell != null && departageH2HCell.Value is bool && (bool)departageH2HCell.Value)
             {
                 // Ajouter un fond léger pour les joueurs départagés
                 if (abandonValue == null || abandonValue.ToString() != "Oui") // Ne pas écraser le style des abandons
@@ -618,7 +649,7 @@ namespace RoundRobin
                 Joueur1 = m.Player1.Name,
                 VS = "vs",
                 Joueur2 = m.Player2.Name,
-                Résultat = GetResultText(m.Result)
+                Resultat = GetResultText(m.Result)  // Enlevé l'accent
             }).ToList();
 
             // Ajouter une ligne pour le joueur au repos si nombre impair de joueurs
@@ -630,7 +661,7 @@ namespace RoundRobin
                     Joueur1 = restingPlayer.Name,
                     VS = "",
                     Joueur2 = "(Ne joue pas ce tour)",
-                    Résultat = "Au repos"
+                    Resultat = "Au repos"  // Enlevé l'accent
                 });
             }
 
@@ -790,14 +821,14 @@ namespace RoundRobin
             var rankingsData = rankings.Select((p, index) => new RankingDisplay
             {
                 Position = index + 1,
-                Joueur = p.Name + (p.RankedByHeadToHead ? " ⚖" : ""), // Ajoute un symbole si départagé
+                Joueur = p.Name + (p.RankedByHeadToHead ? " ⚖" : ""),
                 Points = p.Points,
                 Victoires = p.Victories,
-                Défaites = p.Defeats,
+                Defaites = p.Defeats,  // Enlevé l'accent
                 Abandons = p.Abandonments > 0 ? "Oui" : "Non",
                 AbandonCount = p.Abandonments,
-                MatchsJoués = p.MatchesPlayed,
-                DépartagéH2H = p.RankedByHeadToHead
+                MatchsJoues = p.MatchesPlayed,  // Enlevé l'accent
+                DepartageH2H = p.RankedByHeadToHead  // Enlevé l'accent
             }).ToList();
 
             DataGridViewRankings.DataSource = rankingsData;
@@ -808,10 +839,10 @@ namespace RoundRobin
                 DataGridViewRankings.Columns["AbandonCount"].Visible = false;
             }
 
-            // Masquer la colonne DépartagéH2H (utilisée uniquement pour le formatage)
-            if (DataGridViewRankings.Columns["DépartagéH2H"] != null)
+            // Masquer la colonne DepartageH2H (utilisée uniquement pour le formatage)
+            if (DataGridViewRankings.Columns["DepartageH2H"] != null)  // Enlevé l'accent
             {
-                DataGridViewRankings.Columns["DépartagéH2H"].Visible = false;
+                DataGridViewRankings.Columns["DepartageH2H"].Visible = false;
             }
         }
 

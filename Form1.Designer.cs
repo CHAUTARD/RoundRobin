@@ -32,6 +32,11 @@ namespace RoundRobin
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ContextMenuStripPlayer = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuItemAbandon = new System.Windows.Forms.ToolStripMenuItem();
             this.TabPageRankings = new System.Windows.Forms.TabPage();
@@ -43,8 +48,7 @@ namespace RoundRobin
             this.ComboBoxRound = new System.Windows.Forms.ComboBox();
             this.DataGridViewMatches = new System.Windows.Forms.DataGridView();
             this.TabPageSetup = new System.Windows.Forms.TabPage();
-            this.ToolStripStatusLableCopyright = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelCopyright = new System.Windows.Forms.StatusStrip();
             this.GroupBoxTournamentInfo = new System.Windows.Forms.GroupBox();
             this.LabelDurationPerRound5Sets = new System.Windows.Forms.Label();
             this.LabelDurationPerRound3Sets = new System.Windows.Forms.Label();
@@ -56,6 +60,9 @@ namespace RoundRobin
             this.ListBoxPlayers = new System.Windows.Forms.CheckedListBox();
             this.Label1 = new System.Windows.Forms.Label();
             this.TabControl1 = new System.Windows.Forms.TabControl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnCheckAll = new System.Windows.Forms.Button();
             this.BtnUncheckAll = new System.Windows.Forms.Button();
@@ -65,15 +72,21 @@ namespace RoundRobin
             this.BtnAddPlayer = new System.Windows.Forms.Button();
             this.BtnNextRound = new System.Windows.Forms.Button();
             this.BtnPreviousRound = new System.Windows.Forms.Button();
+            this.ColMatch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColJoueur1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColVS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColJoueur2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColResultat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextMenuStripPlayer.SuspendLayout();
             this.TabPageRankings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewRankings)).BeginInit();
             this.TabPageMatches.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMatches)).BeginInit();
             this.TabPageSetup.SuspendLayout();
-            this.ToolStripStatusLableCopyright.SuspendLayout();
+            this.toolStripStatusLabelCopyright.SuspendLayout();
             this.GroupBoxTournamentInfo.SuspendLayout();
             this.TabControl1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,9 +108,9 @@ namespace RoundRobin
             // 
             this.TabPageRankings.Controls.Add(this.DataGridViewRankings);
             this.TabPageRankings.Controls.Add(this.Label2);
-            this.TabPageRankings.Location = new System.Drawing.Point(4, 22);
+            this.TabPageRankings.Location = new System.Drawing.Point(4, 25);
             this.TabPageRankings.Name = "TabPageRankings";
-            this.TabPageRankings.Size = new System.Drawing.Size(1027, 683);
+            this.TabPageRankings.Size = new System.Drawing.Size(1027, 680);
             this.TabPageRankings.TabIndex = 2;
             this.TabPageRankings.Text = "Classement";
             this.TabPageRankings.UseVisualStyleBackColor = true;
@@ -117,26 +130,26 @@ namespace RoundRobin
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2.Location = new System.Drawing.Point(16, 20);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(88, 16);
+            this.Label2.Size = new System.Drawing.Size(118, 24);
             this.Label2.TabIndex = 0;
             this.Label2.Text = "Classement";
             // 
             // TabPageMatches
             // 
             this.TabPageMatches.Controls.Add(this.LabelMatchHelp);
-            this.TabPageMatches.Controls.Add(this.BtnNextRound);
-            this.TabPageMatches.Controls.Add(this.BtnPreviousRound);
             this.TabPageMatches.Controls.Add(this.Label5);
             this.TabPageMatches.Controls.Add(this.ComboBoxRound);
             this.TabPageMatches.Controls.Add(this.DataGridViewMatches);
+            this.TabPageMatches.Controls.Add(this.BtnNextRound);
+            this.TabPageMatches.Controls.Add(this.BtnPreviousRound);
             this.TabPageMatches.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabPageMatches.Location = new System.Drawing.Point(4, 22);
+            this.TabPageMatches.Location = new System.Drawing.Point(4, 25);
             this.TabPageMatches.Name = "TabPageMatches";
             this.TabPageMatches.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPageMatches.Size = new System.Drawing.Size(1027, 683);
+            this.TabPageMatches.Size = new System.Drawing.Size(1027, 680);
             this.TabPageMatches.TabIndex = 1;
             this.TabPageMatches.Text = "Matchs";
             this.TabPageMatches.UseVisualStyleBackColor = true;
@@ -177,19 +190,26 @@ namespace RoundRobin
             this.DataGridViewMatches.AllowUserToAddRows = false;
             this.DataGridViewMatches.AllowUserToDeleteRows = false;
             this.DataGridViewMatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewMatches.Location = new System.Drawing.Point(21, 72);
+            this.DataGridViewMatches.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColMatch,
+            this.ColJoueur1,
+            this.ColVS,
+            this.ColJoueur2,
+            this.ColResultat});
+            this.DataGridViewMatches.Location = new System.Drawing.Point(6, 72);
             this.DataGridViewMatches.MultiSelect = false;
             this.DataGridViewMatches.Name = "DataGridViewMatches";
             this.DataGridViewMatches.ReadOnly = true;
             this.DataGridViewMatches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewMatches.Size = new System.Drawing.Size(971, 512);
+            this.DataGridViewMatches.Size = new System.Drawing.Size(1013, 512);
             this.DataGridViewMatches.TabIndex = 0;
             this.DataGridViewMatches.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewMatches_CellDoubleClick);
             this.DataGridViewMatches.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewMatches_CellMouseDown);
             // 
             // TabPageSetup
             // 
-            this.TabPageSetup.Controls.Add(this.ToolStripStatusLableCopyright);
+            this.TabPageSetup.Controls.Add(this.groupBox1);
+            this.TabPageSetup.Controls.Add(this.toolStripStatusLabelCopyright);
             this.TabPageSetup.Controls.Add(this.pictureBox1);
             this.TabPageSetup.Controls.Add(this.BtnCheckAll);
             this.TabPageSetup.Controls.Add(this.BtnUncheckAll);
@@ -209,22 +229,14 @@ namespace RoundRobin
             this.TabPageSetup.Text = "Configuration";
             this.TabPageSetup.UseVisualStyleBackColor = true;
             // 
-            // ToolStripStatusLableCopyright
+            // toolStripStatusLabelCopyright
             // 
-            this.ToolStripStatusLableCopyright.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelCopyright.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.ToolStripStatusLableCopyright.Location = new System.Drawing.Point(3, 658);
-            this.ToolStripStatusLableCopyright.Name = "ToolStripStatusLableCopyright";
-            this.ToolStripStatusLableCopyright.Size = new System.Drawing.Size(1021, 22);
-            this.ToolStripStatusLableCopyright.TabIndex = 11;
-            this.ToolStripStatusLableCopyright.Text = "(c) 2026 Patrick CH.";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(1006, 17);
-            this.toolStripStatusLabel1.Spring = true;
-            this.toolStripStatusLabel1.Text = "© 2026 Patrick CH.";
+            this.toolStripStatusLabelCopyright.Location = new System.Drawing.Point(3, 658);
+            this.toolStripStatusLabelCopyright.Name = "toolStripStatusLabelCopyright";
+            this.toolStripStatusLabelCopyright.Size = new System.Drawing.Size(1021, 22);
+            this.toolStripStatusLabelCopyright.TabIndex = 11;
             // 
             // GroupBoxTournamentInfo
             // 
@@ -234,7 +246,7 @@ namespace RoundRobin
             this.GroupBoxTournamentInfo.Controls.Add(this.LabelDuration3Sets);
             this.GroupBoxTournamentInfo.Controls.Add(this.LabelTotalRounds);
             this.GroupBoxTournamentInfo.Controls.Add(this.LabelTotalMatches);
-            this.GroupBoxTournamentInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.GroupBoxTournamentInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBoxTournamentInfo.Location = new System.Drawing.Point(378, 17);
             this.GroupBoxTournamentInfo.Name = "GroupBoxTournamentInfo";
             this.GroupBoxTournamentInfo.Size = new System.Drawing.Size(300, 220);
@@ -310,7 +322,7 @@ namespace RoundRobin
             // 
             this.TxtPlayerName.Location = new System.Drawing.Point(20, 32);
             this.TxtPlayerName.Name = "TxtPlayerName";
-            this.TxtPlayerName.Size = new System.Drawing.Size(219, 20);
+            this.TxtPlayerName.Size = new System.Drawing.Size(219, 22);
             this.TxtPlayerName.TabIndex = 2;
             // 
             // ListBoxPlayers
@@ -338,15 +350,45 @@ namespace RoundRobin
             this.TabControl1.Controls.Add(this.TabPageMatches);
             this.TabControl1.Controls.Add(this.TabPageRankings);
             this.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabControl1.Location = new System.Drawing.Point(0, 0);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
             this.TabControl1.Size = new System.Drawing.Size(1035, 709);
             this.TabControl1.TabIndex = 0;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(381, 486);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(296, 117);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Simple Round Robin";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label3.Location = new System.Drawing.Point(17, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(254, 64);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Un tournoi simple round robin est un\r\nformat de compétition où chaque \r\nparticipa" +
+    "nt affronte tous les autres \r\nparticipants une fois.";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(1006, 17);
+            this.toolStripStatusLabel1.Spring = true;
+            this.toolStripStatusLabel1.Text = "© 2026 Patrick CH. - V1.0";
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::RoundRobin.Properties.Resources.Logo;
+            this.pictureBox1.Image = global::RoundRobin.Properties.Resources.Logo1;
             this.pictureBox1.Location = new System.Drawing.Point(705, 17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(569, 627);
@@ -452,6 +494,66 @@ namespace RoundRobin
             this.BtnPreviousRound.UseVisualStyleBackColor = true;
             this.BtnPreviousRound.Click += new System.EventHandler(this.BtnPreviousRound_Click);
             // 
+            // ColMatch
+            // 
+            this.ColMatch.DataPropertyName = "Match";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColMatch.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ColMatch.Frozen = true;
+            this.ColMatch.HeaderText = "Match";
+            this.ColMatch.Name = "ColMatch";
+            this.ColMatch.ReadOnly = true;
+            this.ColMatch.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColMatch.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ColMatch.Width = 80;
+            // 
+            // ColJoueur1
+            // 
+            this.ColJoueur1.DataPropertyName = "Joueur1";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.ColJoueur1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ColJoueur1.Frozen = true;
+            this.ColJoueur1.HeaderText = "Joueur1";
+            this.ColJoueur1.Name = "ColJoueur1";
+            this.ColJoueur1.ReadOnly = true;
+            this.ColJoueur1.Width = 280;
+            // 
+            // ColVS
+            // 
+            this.ColVS.DataPropertyName = "VS";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColVS.DefaultCellStyle = dataGridViewCellStyle8;
+            this.ColVS.Frozen = true;
+            this.ColVS.HeaderText = "VS";
+            this.ColVS.Name = "ColVS";
+            this.ColVS.ReadOnly = true;
+            this.ColVS.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColVS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColVS.Width = 40;
+            // 
+            // ColJoueur2
+            // 
+            this.ColJoueur2.DataPropertyName = "Joueur2";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColJoueur2.DefaultCellStyle = dataGridViewCellStyle9;
+            this.ColJoueur2.Frozen = true;
+            this.ColJoueur2.HeaderText = "Joueur2";
+            this.ColJoueur2.Name = "ColJoueur2";
+            this.ColJoueur2.ReadOnly = true;
+            this.ColJoueur2.Width = 280;
+            // 
+            // ColResultat
+            // 
+            this.ColResultat.DataPropertyName = "Resultat";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.ColResultat.DefaultCellStyle = dataGridViewCellStyle10;
+            this.ColResultat.Frozen = true;
+            this.ColResultat.HeaderText = "Résultat";
+            this.ColResultat.Name = "ColResultat";
+            this.ColResultat.ReadOnly = true;
+            this.ColResultat.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColResultat.Width = 280;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,7 +562,7 @@ namespace RoundRobin
             this.Controls.Add(this.TabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Tournoi de Tennis de Table - Round Robin par Tours";
+            this.Text = "Tournoi de Tennis de Table - Simple Round Robin par Tours";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ContextMenuStripPlayer.ResumeLayout(false);
@@ -472,11 +574,13 @@ namespace RoundRobin
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMatches)).EndInit();
             this.TabPageSetup.ResumeLayout(false);
             this.TabPageSetup.PerformLayout();
-            this.ToolStripStatusLableCopyright.ResumeLayout(false);
-            this.ToolStripStatusLableCopyright.PerformLayout();
+            this.toolStripStatusLabelCopyright.ResumeLayout(false);
+            this.toolStripStatusLabelCopyright.PerformLayout();
             this.GroupBoxTournamentInfo.ResumeLayout(false);
             this.GroupBoxTournamentInfo.PerformLayout();
             this.TabControl1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -501,8 +605,7 @@ namespace RoundRobin
         private ComboBox ComboBoxRound;
         private DataGridView DataGridViewMatches;
         private TabPage TabPageSetup;
-        private StatusStrip ToolStripStatusLableCopyright;
-        private ToolStripStatusLabel toolStripStatusLabel1;
+        private StatusStrip toolStripStatusLabelCopyright;
         private PictureBox pictureBox1;
         private Button BtnCheckAll;
         private Button BtnUncheckAll;
@@ -521,6 +624,14 @@ namespace RoundRobin
         private CheckedListBox ListBoxPlayers;
         private Label Label1;
         private TabControl TabControl1;
+        private GroupBox groupBox1;
+        private Label label3;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private DataGridViewTextBoxColumn ColMatch;
+        private DataGridViewTextBoxColumn ColJoueur1;
+        private DataGridViewTextBoxColumn ColVS;
+        private DataGridViewTextBoxColumn ColJoueur2;
+        private DataGridViewTextBoxColumn ColResultat;
     }
 }
 
