@@ -35,46 +35,46 @@ namespace RoundRobin
             this.ContextMenuStripPlayer = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuItemAbandon = new System.Windows.Forms.ToolStripMenuItem();
             this.TabPageRankings = new System.Windows.Forms.TabPage();
-            this.Label2 = new System.Windows.Forms.Label();
             this.DataGridViewRankings = new System.Windows.Forms.DataGridView();
+            this.Label2 = new System.Windows.Forms.Label();
             this.TabPageMatches = new System.Windows.Forms.TabPage();
-            this.DataGridViewMatches = new System.Windows.Forms.DataGridView();
-            this.ComboBoxRound = new System.Windows.Forms.ComboBox();
-            this.Label5 = new System.Windows.Forms.Label();
-            this.BtnPreviousRound = new System.Windows.Forms.Button();
-            this.BtnNextRound = new System.Windows.Forms.Button();
             this.LabelMatchHelp = new System.Windows.Forms.Label();
+            this.BtnNextRound = new System.Windows.Forms.Button();
+            this.BtnPreviousRound = new System.Windows.Forms.Button();
+            this.Label5 = new System.Windows.Forms.Label();
+            this.ComboBoxRound = new System.Windows.Forms.ComboBox();
+            this.DataGridViewMatches = new System.Windows.Forms.DataGridView();
             this.TabPageSetup = new System.Windows.Forms.TabPage();
-            this.Label1 = new System.Windows.Forms.Label();
-            this.ListBoxPlayers = new System.Windows.Forms.CheckedListBox();
-            this.TxtPlayerName = new System.Windows.Forms.TextBox();
-            this.BtnAddPlayer = new System.Windows.Forms.Button();
-            this.BtnGenerateMatches = new System.Windows.Forms.Button();
-            this.BtnResetTournament = new System.Windows.Forms.Button();
-            this.GroupBoxTournamentInfo = new System.Windows.Forms.GroupBox();
-            this.LabelTotalMatches = new System.Windows.Forms.Label();
-            this.LabelTotalRounds = new System.Windows.Forms.Label();
-            this.LabelDuration3Sets = new System.Windows.Forms.Label();
-            this.LabelDuration5Sets = new System.Windows.Forms.Label();
-            this.LabelDurationPerRound3Sets = new System.Windows.Forms.Label();
-            this.LabelDurationPerRound5Sets = new System.Windows.Forms.Label();
-            this.BtnLoadFromFile = new System.Windows.Forms.Button();
-            this.BtnUncheckAll = new System.Windows.Forms.Button();
-            this.BtnCheckAll = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ToolStripStatusLableCopyright = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.GroupBoxTournamentInfo = new System.Windows.Forms.GroupBox();
+            this.LabelDurationPerRound5Sets = new System.Windows.Forms.Label();
+            this.LabelDurationPerRound3Sets = new System.Windows.Forms.Label();
+            this.LabelDuration5Sets = new System.Windows.Forms.Label();
+            this.LabelDuration3Sets = new System.Windows.Forms.Label();
+            this.LabelTotalRounds = new System.Windows.Forms.Label();
+            this.LabelTotalMatches = new System.Windows.Forms.Label();
+            this.TxtPlayerName = new System.Windows.Forms.TextBox();
+            this.ListBoxPlayers = new System.Windows.Forms.CheckedListBox();
+            this.Label1 = new System.Windows.Forms.Label();
             this.TabControl1 = new System.Windows.Forms.TabControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnCheckAll = new System.Windows.Forms.Button();
+            this.BtnUncheckAll = new System.Windows.Forms.Button();
+            this.BtnLoadFromFile = new System.Windows.Forms.Button();
+            this.BtnResetTournament = new System.Windows.Forms.Button();
+            this.BtnGenerateMatches = new System.Windows.Forms.Button();
+            this.BtnAddPlayer = new System.Windows.Forms.Button();
             this.ContextMenuStripPlayer.SuspendLayout();
             this.TabPageRankings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewRankings)).BeginInit();
             this.TabPageMatches.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMatches)).BeginInit();
             this.TabPageSetup.SuspendLayout();
-            this.GroupBoxTournamentInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ToolStripStatusLableCopyright.SuspendLayout();
+            this.GroupBoxTournamentInfo.SuspendLayout();
             this.TabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ContextMenuStripPlayer
@@ -97,20 +97,10 @@ namespace RoundRobin
             this.TabPageRankings.Controls.Add(this.Label2);
             this.TabPageRankings.Location = new System.Drawing.Point(4, 22);
             this.TabPageRankings.Name = "TabPageRankings";
-            this.TabPageRankings.Size = new System.Drawing.Size(992, 605);
+            this.TabPageRankings.Size = new System.Drawing.Size(1027, 683);
             this.TabPageRankings.TabIndex = 2;
             this.TabPageRankings.Text = "Classement";
             this.TabPageRankings.UseVisualStyleBackColor = true;
-            // 
-            // Label2
-            // 
-            this.Label2.AutoSize = true;
-            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.Label2.Location = new System.Drawing.Point(16, 20);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(103, 20);
-            this.Label2.TabIndex = 0;
-            this.Label2.Text = "Classement";
             // 
             // DataGridViewRankings
             // 
@@ -124,6 +114,16 @@ namespace RoundRobin
             this.DataGridViewRankings.Size = new System.Drawing.Size(950, 500);
             this.DataGridViewRankings.TabIndex = 1;
             // 
+            // Label2
+            // 
+            this.Label2.AutoSize = true;
+            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.Label2.Location = new System.Drawing.Point(16, 20);
+            this.Label2.Name = "Label2";
+            this.Label2.Size = new System.Drawing.Size(103, 20);
+            this.Label2.TabIndex = 0;
+            this.Label2.Text = "Classement";
+            // 
             // TabPageMatches
             // 
             this.TabPageMatches.Controls.Add(this.LabelMatchHelp);
@@ -135,10 +135,62 @@ namespace RoundRobin
             this.TabPageMatches.Location = new System.Drawing.Point(4, 22);
             this.TabPageMatches.Name = "TabPageMatches";
             this.TabPageMatches.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPageMatches.Size = new System.Drawing.Size(992, 605);
+            this.TabPageMatches.Size = new System.Drawing.Size(1027, 683);
             this.TabPageMatches.TabIndex = 1;
             this.TabPageMatches.Text = "Matchs";
             this.TabPageMatches.UseVisualStyleBackColor = true;
+            // 
+            // LabelMatchHelp
+            // 
+            this.LabelMatchHelp.AutoSize = true;
+            this.LabelMatchHelp.Location = new System.Drawing.Point(272, 539);
+            this.LabelMatchHelp.Name = "LabelMatchHelp";
+            this.LabelMatchHelp.Size = new System.Drawing.Size(448, 52);
+            this.LabelMatchHelp.TabIndex = 10;
+            this.LabelMatchHelp.Text = resources.GetString("LabelMatchHelp.Text");
+            // 
+            // BtnNextRound
+            // 
+            this.BtnNextRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnNextRound.Location = new System.Drawing.Point(286, 12);
+            this.BtnNextRound.Name = "BtnNextRound";
+            this.BtnNextRound.Size = new System.Drawing.Size(40, 28);
+            this.BtnNextRound.TabIndex = 9;
+            this.BtnNextRound.Text = "►";
+            this.BtnNextRound.UseVisualStyleBackColor = true;
+            this.BtnNextRound.Click += new System.EventHandler(this.BtnNextRound_Click);
+            // 
+            // BtnPreviousRound
+            // 
+            this.BtnPreviousRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnPreviousRound.Location = new System.Drawing.Point(240, 12);
+            this.BtnPreviousRound.Name = "BtnPreviousRound";
+            this.BtnPreviousRound.Size = new System.Drawing.Size(40, 28);
+            this.BtnPreviousRound.TabIndex = 8;
+            this.BtnPreviousRound.Text = "◄";
+            this.BtnPreviousRound.UseVisualStyleBackColor = true;
+            this.BtnPreviousRound.Click += new System.EventHandler(this.BtnPreviousRound_Click);
+            // 
+            // Label5
+            // 
+            this.Label5.AutoSize = true;
+            this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.Label5.Location = new System.Drawing.Point(17, 17);
+            this.Label5.Name = "Label5";
+            this.Label5.Size = new System.Drawing.Size(47, 17);
+            this.Label5.TabIndex = 7;
+            this.Label5.Text = "Tour:";
+            // 
+            // ComboBoxRound
+            // 
+            this.ComboBoxRound.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ComboBoxRound.FormattingEnabled = true;
+            this.ComboBoxRound.Location = new System.Drawing.Point(70, 14);
+            this.ComboBoxRound.Name = "ComboBoxRound";
+            this.ComboBoxRound.Size = new System.Drawing.Size(150, 24);
+            this.ComboBoxRound.TabIndex = 6;
+            this.ComboBoxRound.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRound_SelectedIndexChanged);
             // 
             // DataGridViewMatches
             // 
@@ -154,58 +206,6 @@ namespace RoundRobin
             this.DataGridViewMatches.TabIndex = 0;
             this.DataGridViewMatches.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewMatches_CellDoubleClick);
             this.DataGridViewMatches.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewMatches_CellMouseDown);
-            // 
-            // ComboBoxRound
-            // 
-            this.ComboBoxRound.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBoxRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ComboBoxRound.FormattingEnabled = true;
-            this.ComboBoxRound.Location = new System.Drawing.Point(70, 14);
-            this.ComboBoxRound.Name = "ComboBoxRound";
-            this.ComboBoxRound.Size = new System.Drawing.Size(150, 24);
-            this.ComboBoxRound.TabIndex = 6;
-            this.ComboBoxRound.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRound_SelectedIndexChanged);
-            // 
-            // Label5
-            // 
-            this.Label5.AutoSize = true;
-            this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.Label5.Location = new System.Drawing.Point(17, 17);
-            this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(47, 17);
-            this.Label5.TabIndex = 7;
-            this.Label5.Text = "Tour:";
-            // 
-            // BtnPreviousRound
-            // 
-            this.BtnPreviousRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnPreviousRound.Location = new System.Drawing.Point(240, 12);
-            this.BtnPreviousRound.Name = "BtnPreviousRound";
-            this.BtnPreviousRound.Size = new System.Drawing.Size(40, 28);
-            this.BtnPreviousRound.TabIndex = 8;
-            this.BtnPreviousRound.Text = "◄";
-            this.BtnPreviousRound.UseVisualStyleBackColor = true;
-            this.BtnPreviousRound.Click += new System.EventHandler(this.BtnPreviousRound_Click);
-            // 
-            // BtnNextRound
-            // 
-            this.BtnNextRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnNextRound.Location = new System.Drawing.Point(286, 12);
-            this.BtnNextRound.Name = "BtnNextRound";
-            this.BtnNextRound.Size = new System.Drawing.Size(40, 28);
-            this.BtnNextRound.TabIndex = 9;
-            this.BtnNextRound.Text = "►";
-            this.BtnNextRound.UseVisualStyleBackColor = true;
-            this.BtnNextRound.Click += new System.EventHandler(this.BtnNextRound_Click);
-            // 
-            // LabelMatchHelp
-            // 
-            this.LabelMatchHelp.AutoSize = true;
-            this.LabelMatchHelp.Location = new System.Drawing.Point(272, 539);
-            this.LabelMatchHelp.Name = "LabelMatchHelp";
-            this.LabelMatchHelp.Size = new System.Drawing.Size(448, 52);
-            this.LabelMatchHelp.TabIndex = 10;
-            this.LabelMatchHelp.Text = resources.GetString("LabelMatchHelp.Text");
             // 
             // TabPageSetup
             // 
@@ -224,68 +224,27 @@ namespace RoundRobin
             this.TabPageSetup.Location = new System.Drawing.Point(4, 22);
             this.TabPageSetup.Name = "TabPageSetup";
             this.TabPageSetup.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPageSetup.Size = new System.Drawing.Size(992, 605);
+            this.TabPageSetup.Size = new System.Drawing.Size(1027, 683);
             this.TabPageSetup.TabIndex = 0;
             this.TabPageSetup.Text = "Configuration";
             this.TabPageSetup.UseVisualStyleBackColor = true;
             // 
-            // Label1
+            // ToolStripStatusLableCopyright
             // 
-            this.Label1.AutoSize = true;
-            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Label1.Location = new System.Drawing.Point(17, 62);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(62, 15);
-            this.Label1.TabIndex = 0;
-            this.Label1.Text = "Joueurs:";
+            this.ToolStripStatusLableCopyright.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.ToolStripStatusLableCopyright.Location = new System.Drawing.Point(3, 658);
+            this.ToolStripStatusLableCopyright.Name = "ToolStripStatusLableCopyright";
+            this.ToolStripStatusLableCopyright.Size = new System.Drawing.Size(1021, 22);
+            this.ToolStripStatusLableCopyright.TabIndex = 11;
+            this.ToolStripStatusLableCopyright.Text = "(c) 2026 Patrick CH.";
             // 
-            // ListBoxPlayers
+            // toolStripStatusLabel1
             // 
-            this.ListBoxPlayers.CheckOnClick = true;
-            this.ListBoxPlayers.FormattingEnabled = true;
-            this.ListBoxPlayers.Location = new System.Drawing.Point(20, 80);
-            this.ListBoxPlayers.Name = "ListBoxPlayers";
-            this.ListBoxPlayers.Size = new System.Drawing.Size(300, 394);
-            this.ListBoxPlayers.TabIndex = 1;
-            // 
-            // TxtPlayerName
-            // 
-            this.TxtPlayerName.Location = new System.Drawing.Point(20, 32);
-            this.TxtPlayerName.Name = "TxtPlayerName";
-            this.TxtPlayerName.Size = new System.Drawing.Size(219, 20);
-            this.TxtPlayerName.TabIndex = 2;
-            // 
-            // BtnAddPlayer
-            // 
-            this.BtnAddPlayer.Location = new System.Drawing.Point(245, 30);
-            this.BtnAddPlayer.Name = "BtnAddPlayer";
-            this.BtnAddPlayer.Size = new System.Drawing.Size(75, 23);
-            this.BtnAddPlayer.TabIndex = 3;
-            this.BtnAddPlayer.Text = "Ajouter";
-            this.BtnAddPlayer.UseVisualStyleBackColor = true;
-            this.BtnAddPlayer.Click += new System.EventHandler(this.BtnAddPlayer_Click);
-            // 
-            // BtnGenerateMatches
-            // 
-            this.BtnGenerateMatches.Enabled = false;
-            this.BtnGenerateMatches.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnGenerateMatches.Location = new System.Drawing.Point(355, 259);
-            this.BtnGenerateMatches.Name = "BtnGenerateMatches";
-            this.BtnGenerateMatches.Size = new System.Drawing.Size(300, 40);
-            this.BtnGenerateMatches.TabIndex = 4;
-            this.BtnGenerateMatches.Text = "Générer les matchs par tour";
-            this.BtnGenerateMatches.UseVisualStyleBackColor = true;
-            this.BtnGenerateMatches.Click += new System.EventHandler(this.BtnGenerateMatches_Click);
-            // 
-            // BtnResetTournament
-            // 
-            this.BtnResetTournament.Location = new System.Drawing.Point(355, 323);
-            this.BtnResetTournament.Name = "BtnResetTournament";
-            this.BtnResetTournament.Size = new System.Drawing.Size(300, 40);
-            this.BtnResetTournament.TabIndex = 5;
-            this.BtnResetTournament.Text = "Réinitialiser le tournoi";
-            this.BtnResetTournament.UseVisualStyleBackColor = true;
-            this.BtnResetTournament.Click += new System.EventHandler(this.BtnResetTournament_Click);
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(1006, 17);
+            this.toolStripStatusLabel1.Spring = true;
+            this.toolStripStatusLabel1.Text = "© 2026 Patrick CH.";
             // 
             // GroupBoxTournamentInfo
             // 
@@ -296,65 +255,12 @@ namespace RoundRobin
             this.GroupBoxTournamentInfo.Controls.Add(this.LabelTotalRounds);
             this.GroupBoxTournamentInfo.Controls.Add(this.LabelTotalMatches);
             this.GroupBoxTournamentInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.GroupBoxTournamentInfo.Location = new System.Drawing.Point(355, 17);
+            this.GroupBoxTournamentInfo.Location = new System.Drawing.Point(378, 17);
             this.GroupBoxTournamentInfo.Name = "GroupBoxTournamentInfo";
             this.GroupBoxTournamentInfo.Size = new System.Drawing.Size(300, 220);
             this.GroupBoxTournamentInfo.TabIndex = 6;
             this.GroupBoxTournamentInfo.TabStop = false;
             this.GroupBoxTournamentInfo.Text = "📊 Informations sur le tournoi";
-            // 
-            // LabelTotalMatches
-            // 
-            this.LabelTotalMatches.AutoSize = true;
-            this.LabelTotalMatches.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.LabelTotalMatches.Location = new System.Drawing.Point(15, 30);
-            this.LabelTotalMatches.Name = "LabelTotalMatches";
-            this.LabelTotalMatches.Size = new System.Drawing.Size(111, 15);
-            this.LabelTotalMatches.TabIndex = 0;
-            this.LabelTotalMatches.Text = "Total de matchs : --";
-            // 
-            // LabelTotalRounds
-            // 
-            this.LabelTotalRounds.AutoSize = true;
-            this.LabelTotalRounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.LabelTotalRounds.Location = new System.Drawing.Point(15, 55);
-            this.LabelTotalRounds.Name = "LabelTotalRounds";
-            this.LabelTotalRounds.Size = new System.Drawing.Size(116, 15);
-            this.LabelTotalRounds.TabIndex = 1;
-            this.LabelTotalRounds.Text = "Nombre de tours : --";
-            // 
-            // LabelDuration3Sets
-            // 
-            this.LabelDuration3Sets.AutoSize = true;
-            this.LabelDuration3Sets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.LabelDuration3Sets.ForeColor = System.Drawing.Color.DarkGreen;
-            this.LabelDuration3Sets.Location = new System.Drawing.Point(15, 90);
-            this.LabelDuration3Sets.Name = "LabelDuration3Sets";
-            this.LabelDuration3Sets.Size = new System.Drawing.Size(194, 15);
-            this.LabelDuration3Sets.TabIndex = 2;
-            this.LabelDuration3Sets.Text = "⏱️ Durée estimée (3 manches) : --";
-            // 
-            // LabelDuration5Sets
-            // 
-            this.LabelDuration5Sets.AutoSize = true;
-            this.LabelDuration5Sets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.LabelDuration5Sets.ForeColor = System.Drawing.Color.DarkOrange;
-            this.LabelDuration5Sets.Location = new System.Drawing.Point(15, 115);
-            this.LabelDuration5Sets.Name = "LabelDuration5Sets";
-            this.LabelDuration5Sets.Size = new System.Drawing.Size(194, 15);
-            this.LabelDuration5Sets.TabIndex = 3;
-            this.LabelDuration5Sets.Text = "⏱️ Durée estimée (5 manches) : --";
-            // 
-            // LabelDurationPerRound3Sets
-            // 
-            this.LabelDurationPerRound3Sets.AutoSize = true;
-            this.LabelDurationPerRound3Sets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Italic);
-            this.LabelDurationPerRound3Sets.ForeColor = System.Drawing.Color.Gray;
-            this.LabelDurationPerRound3Sets.Location = new System.Drawing.Point(35, 140);
-            this.LabelDurationPerRound3Sets.Name = "LabelDurationPerRound3Sets";
-            this.LabelDurationPerRound3Sets.Size = new System.Drawing.Size(162, 15);
-            this.LabelDurationPerRound3Sets.TabIndex = 4;
-            this.LabelDurationPerRound3Sets.Text = "   Par tour : -- (15 min/match)";
             // 
             // LabelDurationPerRound5Sets
             // 
@@ -367,61 +273,84 @@ namespace RoundRobin
             this.LabelDurationPerRound5Sets.TabIndex = 5;
             this.LabelDurationPerRound5Sets.Text = "   Par tour : -- (25 min/match)";
             // 
-            // BtnLoadFromFile
+            // LabelDurationPerRound3Sets
             // 
-            this.BtnLoadFromFile.Location = new System.Drawing.Point(20, 536);
-            this.BtnLoadFromFile.Name = "BtnLoadFromFile";
-            this.BtnLoadFromFile.Size = new System.Drawing.Size(300, 30);
-            this.BtnLoadFromFile.TabIndex = 7;
-            this.BtnLoadFromFile.Text = "📂 Charger la liste depuis un fichier";
-            this.BtnLoadFromFile.UseVisualStyleBackColor = true;
-            this.BtnLoadFromFile.Click += new System.EventHandler(this.BtnLoadFromFile_Click);
+            this.LabelDurationPerRound3Sets.AutoSize = true;
+            this.LabelDurationPerRound3Sets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Italic);
+            this.LabelDurationPerRound3Sets.ForeColor = System.Drawing.Color.Gray;
+            this.LabelDurationPerRound3Sets.Location = new System.Drawing.Point(35, 140);
+            this.LabelDurationPerRound3Sets.Name = "LabelDurationPerRound3Sets";
+            this.LabelDurationPerRound3Sets.Size = new System.Drawing.Size(162, 15);
+            this.LabelDurationPerRound3Sets.TabIndex = 4;
+            this.LabelDurationPerRound3Sets.Text = "   Par tour : -- (15 min/match)";
             // 
-            // BtnUncheckAll
+            // LabelDuration5Sets
             // 
-            this.BtnUncheckAll.Location = new System.Drawing.Point(218, 482);
-            this.BtnUncheckAll.Name = "BtnUncheckAll";
-            this.BtnUncheckAll.Size = new System.Drawing.Size(102, 23);
-            this.BtnUncheckAll.TabIndex = 9;
-            this.BtnUncheckAll.Text = "Tout décocher";
-            this.BtnUncheckAll.UseVisualStyleBackColor = true;
-            this.BtnUncheckAll.Click += new System.EventHandler(this.BtnUncheckAll_Click);
+            this.LabelDuration5Sets.AutoSize = true;
+            this.LabelDuration5Sets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.LabelDuration5Sets.ForeColor = System.Drawing.Color.DarkOrange;
+            this.LabelDuration5Sets.Location = new System.Drawing.Point(15, 115);
+            this.LabelDuration5Sets.Name = "LabelDuration5Sets";
+            this.LabelDuration5Sets.Size = new System.Drawing.Size(194, 15);
+            this.LabelDuration5Sets.TabIndex = 3;
+            this.LabelDuration5Sets.Text = "⏱️ Durée estimée (5 manches) : --";
             // 
-            // BtnCheckAll
+            // LabelDuration3Sets
             // 
-            this.BtnCheckAll.Location = new System.Drawing.Point(20, 482);
-            this.BtnCheckAll.Name = "BtnCheckAll";
-            this.BtnCheckAll.Size = new System.Drawing.Size(104, 23);
-            this.BtnCheckAll.TabIndex = 8;
-            this.BtnCheckAll.Text = "Tout cocher";
-            this.BtnCheckAll.UseVisualStyleBackColor = true;
-            this.BtnCheckAll.Click += new System.EventHandler(this.BtnCheckAll_Click);
+            this.LabelDuration3Sets.AutoSize = true;
+            this.LabelDuration3Sets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.LabelDuration3Sets.ForeColor = System.Drawing.Color.DarkGreen;
+            this.LabelDuration3Sets.Location = new System.Drawing.Point(15, 90);
+            this.LabelDuration3Sets.Name = "LabelDuration3Sets";
+            this.LabelDuration3Sets.Size = new System.Drawing.Size(194, 15);
+            this.LabelDuration3Sets.TabIndex = 2;
+            this.LabelDuration3Sets.Text = "⏱️ Durée estimée (3 manches) : --";
             // 
-            // pictureBox1
+            // LabelTotalRounds
             // 
-            this.pictureBox1.Image = global::RoundRobin.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(705, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(284, 549);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.LabelTotalRounds.AutoSize = true;
+            this.LabelTotalRounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.LabelTotalRounds.Location = new System.Drawing.Point(15, 55);
+            this.LabelTotalRounds.Name = "LabelTotalRounds";
+            this.LabelTotalRounds.Size = new System.Drawing.Size(116, 15);
+            this.LabelTotalRounds.TabIndex = 1;
+            this.LabelTotalRounds.Text = "Nombre de tours : --";
             // 
-            // ToolStripStatusLableCopyright
+            // LabelTotalMatches
             // 
-            this.ToolStripStatusLableCopyright.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.ToolStripStatusLableCopyright.Location = new System.Drawing.Point(3, 580);
-            this.ToolStripStatusLableCopyright.Name = "ToolStripStatusLableCopyright";
-            this.ToolStripStatusLableCopyright.Size = new System.Drawing.Size(986, 22);
-            this.ToolStripStatusLableCopyright.TabIndex = 11;
-            this.ToolStripStatusLableCopyright.Text = "(c) 2026 Patrick CH.";
+            this.LabelTotalMatches.AutoSize = true;
+            this.LabelTotalMatches.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.LabelTotalMatches.Location = new System.Drawing.Point(15, 30);
+            this.LabelTotalMatches.Name = "LabelTotalMatches";
+            this.LabelTotalMatches.Size = new System.Drawing.Size(111, 15);
+            this.LabelTotalMatches.TabIndex = 0;
+            this.LabelTotalMatches.Text = "Total de matchs : --";
             // 
-            // toolStripStatusLabel1
+            // TxtPlayerName
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(971, 17);
-            this.toolStripStatusLabel1.Spring = true;
-            this.toolStripStatusLabel1.Text = "© 2026 Patrick CH.";
+            this.TxtPlayerName.Location = new System.Drawing.Point(20, 32);
+            this.TxtPlayerName.Name = "TxtPlayerName";
+            this.TxtPlayerName.Size = new System.Drawing.Size(219, 20);
+            this.TxtPlayerName.TabIndex = 2;
+            // 
+            // ListBoxPlayers
+            // 
+            this.ListBoxPlayers.CheckOnClick = true;
+            this.ListBoxPlayers.FormattingEnabled = true;
+            this.ListBoxPlayers.Location = new System.Drawing.Point(20, 80);
+            this.ListBoxPlayers.Name = "ListBoxPlayers";
+            this.ListBoxPlayers.Size = new System.Drawing.Size(321, 394);
+            this.ListBoxPlayers.TabIndex = 1;
+            // 
+            // Label1
+            // 
+            this.Label1.AutoSize = true;
+            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.Label1.Location = new System.Drawing.Point(17, 62);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(62, 15);
+            this.Label1.TabIndex = 0;
+            this.Label1.Text = "Joueurs:";
             // 
             // TabControl1
             // 
@@ -432,14 +361,100 @@ namespace RoundRobin
             this.TabControl1.Location = new System.Drawing.Point(0, 0);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
-            this.TabControl1.Size = new System.Drawing.Size(1000, 631);
+            this.TabControl1.Size = new System.Drawing.Size(1035, 709);
             this.TabControl1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RoundRobin.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(705, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(569, 627);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BtnCheckAll
+            // 
+            this.BtnCheckAll.Image = global::RoundRobin.Properties.Resources.tout_cocher_64;
+            this.BtnCheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCheckAll.Location = new System.Drawing.Point(20, 482);
+            this.BtnCheckAll.Name = "BtnCheckAll";
+            this.BtnCheckAll.Size = new System.Drawing.Size(150, 76);
+            this.BtnCheckAll.TabIndex = 8;
+            this.BtnCheckAll.Text = "Tout &cocher";
+            this.BtnCheckAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnCheckAll.UseVisualStyleBackColor = true;
+            this.BtnCheckAll.Click += new System.EventHandler(this.BtnCheckAll_Click);
+            // 
+            // BtnUncheckAll
+            // 
+            this.BtnUncheckAll.Image = global::RoundRobin.Properties.Resources.tout_decocher_64;
+            this.BtnUncheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnUncheckAll.Location = new System.Drawing.Point(191, 482);
+            this.BtnUncheckAll.Name = "BtnUncheckAll";
+            this.BtnUncheckAll.Size = new System.Drawing.Size(150, 76);
+            this.BtnUncheckAll.TabIndex = 9;
+            this.BtnUncheckAll.Text = "Tout &décocher";
+            this.BtnUncheckAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnUncheckAll.UseVisualStyleBackColor = true;
+            this.BtnUncheckAll.Click += new System.EventHandler(this.BtnUncheckAll_Click);
+            // 
+            // BtnLoadFromFile
+            // 
+            this.BtnLoadFromFile.Image = global::RoundRobin.Properties.Resources.Directory_64;
+            this.BtnLoadFromFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnLoadFromFile.Location = new System.Drawing.Point(20, 579);
+            this.BtnLoadFromFile.Name = "BtnLoadFromFile";
+            this.BtnLoadFromFile.Size = new System.Drawing.Size(321, 76);
+            this.BtnLoadFromFile.TabIndex = 7;
+            this.BtnLoadFromFile.Text = "Charger la &liste depuis un fichier";
+            this.BtnLoadFromFile.UseVisualStyleBackColor = true;
+            this.BtnLoadFromFile.Click += new System.EventHandler(this.BtnLoadFromFile_Click);
+            // 
+            // BtnResetTournament
+            // 
+            this.BtnResetTournament.Image = global::RoundRobin.Properties.Resources.Corbeille_64;
+            this.BtnResetTournament.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnResetTournament.Location = new System.Drawing.Point(378, 363);
+            this.BtnResetTournament.Name = "BtnResetTournament";
+            this.BtnResetTournament.Size = new System.Drawing.Size(300, 76);
+            this.BtnResetTournament.TabIndex = 5;
+            this.BtnResetTournament.Text = "&Réinitialiser le tournoi";
+            this.BtnResetTournament.UseVisualStyleBackColor = true;
+            this.BtnResetTournament.Click += new System.EventHandler(this.BtnResetTournament_Click);
+            // 
+            // BtnGenerateMatches
+            // 
+            this.BtnGenerateMatches.Enabled = false;
+            this.BtnGenerateMatches.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnGenerateMatches.Image = global::RoundRobin.Properties.Resources.Go_64;
+            this.BtnGenerateMatches.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnGenerateMatches.Location = new System.Drawing.Point(378, 269);
+            this.BtnGenerateMatches.Name = "BtnGenerateMatches";
+            this.BtnGenerateMatches.Size = new System.Drawing.Size(300, 76);
+            this.BtnGenerateMatches.TabIndex = 4;
+            this.BtnGenerateMatches.Text = "&Générer les matchs par tour";
+            this.BtnGenerateMatches.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnGenerateMatches.UseVisualStyleBackColor = true;
+            this.BtnGenerateMatches.Click += new System.EventHandler(this.BtnGenerateMatches_Click);
+            // 
+            // BtnAddPlayer
+            // 
+            this.BtnAddPlayer.Image = global::RoundRobin.Properties.Resources.Ajouter_64;
+            this.BtnAddPlayer.Location = new System.Drawing.Point(245, 3);
+            this.BtnAddPlayer.Name = "BtnAddPlayer";
+            this.BtnAddPlayer.Size = new System.Drawing.Size(96, 76);
+            this.BtnAddPlayer.TabIndex = 3;
+            this.BtnAddPlayer.Text = "&Ajouter";
+            this.BtnAddPlayer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnAddPlayer.UseVisualStyleBackColor = true;
+            this.BtnAddPlayer.Click += new System.EventHandler(this.BtnAddPlayer_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 631);
+            this.ClientSize = new System.Drawing.Size(1035, 709);
             this.Controls.Add(this.TabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -455,12 +470,12 @@ namespace RoundRobin
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMatches)).EndInit();
             this.TabPageSetup.ResumeLayout(false);
             this.TabPageSetup.PerformLayout();
-            this.GroupBoxTournamentInfo.ResumeLayout(false);
-            this.GroupBoxTournamentInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ToolStripStatusLableCopyright.ResumeLayout(false);
             this.ToolStripStatusLableCopyright.PerformLayout();
+            this.GroupBoxTournamentInfo.ResumeLayout(false);
+            this.GroupBoxTournamentInfo.PerformLayout();
             this.TabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

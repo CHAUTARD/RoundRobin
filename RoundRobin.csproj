@@ -88,8 +88,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gitignore .gitignore" />
+    <None Include="Images\tout_cocher.png" />
+    <None Include="Images\Go.png" />
+    <None Include="Images\Go_64.png" />
+    <None Include="Images\Corbeille_64.png" />
+    <None Include="Images\tout_cocher_64.png" />
+    <None Include="Images\tout_decocher_64.png" />
+    <None Include="Images\directory.png" />
+    <None Include="Images\Directory_64.png" />
+    <None Include="Images\Ajouter_64.png" />
     <Content Include="LICENSE.txt" />
     <None Include="Logo.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
