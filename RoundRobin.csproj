@@ -97,6 +97,8 @@
     <None Include="Images\directory.png" />
     <None Include="Images\Directory_64.png" />
     <None Include="Images\Ajouter_64.png" />
+    <None Include="Images\Fleche_Gauche_64.png" />
+    <None Include="Images\Fleche_Droite_64.png" />
     <Content Include="LICENSE.txt" />
     <None Include="Logo.png" />
   </ItemGroup>

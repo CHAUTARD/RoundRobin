@@ -118,26 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tout_decocher_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\tout_decocher_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tout_cocher_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\tout_cocher_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Go" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Go.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tout_cocher_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\tout_cocher_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Go_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Go_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="directory" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\directory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Go_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Go_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Fleche_Gauche_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Fleche_Gauche_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tout_decocher_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\tout_decocher_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Directory_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Directory_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ajouter_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Ajouter_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tout_cocher" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\tout_cocher.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,7 +151,7 @@
   <data name="Corbeille_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Corbeille_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ajouter_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Ajouter_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Fleche_Droite_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Fleche_Droite_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

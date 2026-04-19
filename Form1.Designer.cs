@@ -39,8 +39,6 @@ namespace RoundRobin
             this.Label2 = new System.Windows.Forms.Label();
             this.TabPageMatches = new System.Windows.Forms.TabPage();
             this.LabelMatchHelp = new System.Windows.Forms.Label();
-            this.BtnNextRound = new System.Windows.Forms.Button();
-            this.BtnPreviousRound = new System.Windows.Forms.Button();
             this.Label5 = new System.Windows.Forms.Label();
             this.ComboBoxRound = new System.Windows.Forms.ComboBox();
             this.DataGridViewMatches = new System.Windows.Forms.DataGridView();
@@ -65,6 +63,8 @@ namespace RoundRobin
             this.BtnResetTournament = new System.Windows.Forms.Button();
             this.BtnGenerateMatches = new System.Windows.Forms.Button();
             this.BtnAddPlayer = new System.Windows.Forms.Button();
+            this.BtnNextRound = new System.Windows.Forms.Button();
+            this.BtnPreviousRound = new System.Windows.Forms.Button();
             this.ContextMenuStripPlayer.SuspendLayout();
             this.TabPageRankings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewRankings)).BeginInit();
@@ -111,16 +111,16 @@ namespace RoundRobin
             this.DataGridViewRankings.Location = new System.Drawing.Point(20, 50);
             this.DataGridViewRankings.Name = "DataGridViewRankings";
             this.DataGridViewRankings.ReadOnly = true;
-            this.DataGridViewRankings.Size = new System.Drawing.Size(950, 500);
+            this.DataGridViewRankings.Size = new System.Drawing.Size(950, 611);
             this.DataGridViewRankings.TabIndex = 1;
             // 
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2.Location = new System.Drawing.Point(16, 20);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(103, 20);
+            this.Label2.Size = new System.Drawing.Size(88, 16);
             this.Label2.TabIndex = 0;
             this.Label2.Text = "Classement";
             // 
@@ -132,6 +132,7 @@ namespace RoundRobin
             this.TabPageMatches.Controls.Add(this.Label5);
             this.TabPageMatches.Controls.Add(this.ComboBoxRound);
             this.TabPageMatches.Controls.Add(this.DataGridViewMatches);
+            this.TabPageMatches.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabPageMatches.Location = new System.Drawing.Point(4, 22);
             this.TabPageMatches.Name = "TabPageMatches";
             this.TabPageMatches.Padding = new System.Windows.Forms.Padding(3);
@@ -143,52 +144,31 @@ namespace RoundRobin
             // LabelMatchHelp
             // 
             this.LabelMatchHelp.AutoSize = true;
-            this.LabelMatchHelp.Location = new System.Drawing.Point(272, 539);
+            this.LabelMatchHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelMatchHelp.Location = new System.Drawing.Point(163, 600);
             this.LabelMatchHelp.Name = "LabelMatchHelp";
-            this.LabelMatchHelp.Size = new System.Drawing.Size(448, 52);
+            this.LabelMatchHelp.Size = new System.Drawing.Size(553, 64);
             this.LabelMatchHelp.TabIndex = 10;
             this.LabelMatchHelp.Text = resources.GetString("LabelMatchHelp.Text");
-            // 
-            // BtnNextRound
-            // 
-            this.BtnNextRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnNextRound.Location = new System.Drawing.Point(286, 12);
-            this.BtnNextRound.Name = "BtnNextRound";
-            this.BtnNextRound.Size = new System.Drawing.Size(40, 28);
-            this.BtnNextRound.TabIndex = 9;
-            this.BtnNextRound.Text = "►";
-            this.BtnNextRound.UseVisualStyleBackColor = true;
-            this.BtnNextRound.Click += new System.EventHandler(this.BtnNextRound_Click);
-            // 
-            // BtnPreviousRound
-            // 
-            this.BtnPreviousRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnPreviousRound.Location = new System.Drawing.Point(240, 12);
-            this.BtnPreviousRound.Name = "BtnPreviousRound";
-            this.BtnPreviousRound.Size = new System.Drawing.Size(40, 28);
-            this.BtnPreviousRound.TabIndex = 8;
-            this.BtnPreviousRound.Text = "◄";
-            this.BtnPreviousRound.UseVisualStyleBackColor = true;
-            this.BtnPreviousRound.Click += new System.EventHandler(this.BtnPreviousRound_Click);
             // 
             // Label5
             // 
             this.Label5.AutoSize = true;
-            this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.Label5.Location = new System.Drawing.Point(17, 17);
+            this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label5.Location = new System.Drawing.Point(17, 29);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(47, 17);
+            this.Label5.Size = new System.Drawing.Size(50, 20);
             this.Label5.TabIndex = 7;
             this.Label5.Text = "Tour:";
             // 
             // ComboBoxRound
             // 
             this.ComboBoxRound.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBoxRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ComboBoxRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxRound.FormattingEnabled = true;
-            this.ComboBoxRound.Location = new System.Drawing.Point(70, 14);
+            this.ComboBoxRound.Location = new System.Drawing.Point(166, 25);
             this.ComboBoxRound.Name = "ComboBoxRound";
-            this.ComboBoxRound.Size = new System.Drawing.Size(150, 24);
+            this.ComboBoxRound.Size = new System.Drawing.Size(150, 28);
             this.ComboBoxRound.TabIndex = 6;
             this.ComboBoxRound.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRound_SelectedIndexChanged);
             // 
@@ -197,12 +177,12 @@ namespace RoundRobin
             this.DataGridViewMatches.AllowUserToAddRows = false;
             this.DataGridViewMatches.AllowUserToDeleteRows = false;
             this.DataGridViewMatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewMatches.Location = new System.Drawing.Point(20, 50);
+            this.DataGridViewMatches.Location = new System.Drawing.Point(21, 72);
             this.DataGridViewMatches.MultiSelect = false;
             this.DataGridViewMatches.Name = "DataGridViewMatches";
             this.DataGridViewMatches.ReadOnly = true;
             this.DataGridViewMatches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewMatches.Size = new System.Drawing.Size(950, 460);
+            this.DataGridViewMatches.Size = new System.Drawing.Size(971, 512);
             this.DataGridViewMatches.TabIndex = 0;
             this.DataGridViewMatches.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewMatches_CellDoubleClick);
             this.DataGridViewMatches.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewMatches_CellMouseDown);
@@ -449,6 +429,28 @@ namespace RoundRobin
             this.BtnAddPlayer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnAddPlayer.UseVisualStyleBackColor = true;
             this.BtnAddPlayer.Click += new System.EventHandler(this.BtnAddPlayer_Click);
+            // 
+            // BtnNextRound
+            // 
+            this.BtnNextRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnNextRound.Image = global::RoundRobin.Properties.Resources.Fleche_Droite_64;
+            this.BtnNextRound.Location = new System.Drawing.Point(322, 12);
+            this.BtnNextRound.Name = "BtnNextRound";
+            this.BtnNextRound.Size = new System.Drawing.Size(74, 54);
+            this.BtnNextRound.TabIndex = 9;
+            this.BtnNextRound.UseVisualStyleBackColor = true;
+            this.BtnNextRound.Click += new System.EventHandler(this.BtnNextRound_Click);
+            // 
+            // BtnPreviousRound
+            // 
+            this.BtnPreviousRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnPreviousRound.Image = global::RoundRobin.Properties.Resources.Fleche_Gauche_64;
+            this.BtnPreviousRound.Location = new System.Drawing.Point(86, 13);
+            this.BtnPreviousRound.Name = "BtnPreviousRound";
+            this.BtnPreviousRound.Size = new System.Drawing.Size(74, 54);
+            this.BtnPreviousRound.TabIndex = 8;
+            this.BtnPreviousRound.UseVisualStyleBackColor = true;
+            this.BtnPreviousRound.Click += new System.EventHandler(this.BtnPreviousRound_Click);
             // 
             // Form1
             // 
