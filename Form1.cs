@@ -15,10 +15,13 @@ namespace RoundRobin
         private int _currentRound = 1;
         private int _rightClickedRowIndex = -1;
         private int _rightClickedColumnIndex = -1;
-        
+
         // Références aux onglets pour pouvoir les réajouter après suppression
         private TabPage _tabPageMatches;
         private TabPage _tabPageRankings;
+
+        // Liste de tous les joueurs (pour le filtre)
+        private List<string> _allPlayersList = new List<string>();
 
         public Form1()
         {
@@ -26,17 +29,14 @@ namespace RoundRobin
             _tournamentManager = new TournamentManager();
             InitializeMatchesGridStyle();
             InitializeRankingsGridStyle();
-            
+
             // Sauvegarder les références aux onglets
             _tabPageMatches = TabPageMatches;
             _tabPageRankings = TabPageRankings;
-            
-            // Mettre à jour les infos quand on coche/décoche un joueur
-            ListBoxPlayers.ItemCheck += ListBoxPlayers_ItemCheck;
-            
+
             // Désactiver les onglets Matchs et Classement au démarrage
             UpdateTabsState();
-            
+
             // Mettre à jour le StatusStrip avec les informations de version
             UpdateStatusStrip();
         }
@@ -117,10 +117,16 @@ namespace RoundRobin
                 if (result == DialogResult.Yes)
                 {
                     // Restaurer l'interface
+                    _allPlayersList.Clear();
+                    ListBoxPresentPlayers.Items.Clear();
+
                     foreach (var player in _tournamentManager.Players)
                     {
-                        ListBoxPlayers.Items.Add(player.Name);
+                        _allPlayersList.Add(player.Name);
+                        ListBoxPresentPlayers.Items.Add(player.Name);
                     }
+
+                    RefreshAllPlayersList();
 
                     if (_tournamentManager.Matches.Count > 0)
                     {
@@ -413,13 +419,18 @@ namespace RoundRobin
 
                     if (players.Count > 0)
                     {
+                        _allPlayersList.Clear();
+                        _allPlayersList.AddRange(players);
+
+                        RefreshAllPlayersList();
+
+                        // Ajouter tous les joueurs dans la liste des présents par défaut
                         foreach (string playerName in players)
                         {
-                            int index = ListBoxPlayers.Items.Add(playerName);
-                            ListBoxPlayers.SetItemChecked(index, true); // Tous cochés par défaut
+                            ListBoxPresentPlayers.Items.Add(playerName);
                         }
 
-                        UpdateTournamentInfoFromCheckedPlayers();
+                        UpdateTournamentInfoFromPresentPlayers();
                         UpdateGenerateButtonState();
                         return;
                     }
@@ -462,23 +473,24 @@ namespace RoundRobin
             string playerName = TxtPlayerName.Text.Trim();
 
             // Vérifier si le joueur n'existe pas déjà
-            if (ListBoxPlayers.Items.Cast<string>().Contains(playerName))
+            if (_allPlayersList.Contains(playerName))
             {
                 MessageBox.Show("Ce joueur existe déjà dans la liste.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Ajouter le joueur et le cocher automatiquement
-            int index = ListBoxPlayers.Items.Add(playerName);
-            ListBoxPlayers.SetItemChecked(index, true);
+            // Ajouter le joueur à la liste complète et à la liste des présents
+            _allPlayersList.Add(playerName);
+            RefreshAllPlayersList();
+            ListBoxPresentPlayers.Items.Add(playerName);
 
             TxtPlayerName.Clear();
             TxtPlayerName.Focus();
 
-            UpdateTournamentInfoFromCheckedPlayers();
+            UpdateTournamentInfoFromPresentPlayers();
             UpdateGenerateButtonState();
 
-            // Pas de sauvegarde ici, car on sauvegarde uniquement les joueurs cochés lors de la génération
+            // Pas de sauvegarde ici, car on sauvegarde uniquement les joueurs présents lors de la génération
         }
 
         private void BtnLoadFromFile_Click(object sender, EventArgs e)
@@ -510,22 +522,27 @@ namespace RoundRobin
                             return;
                         }
 
-                        // Effacer la liste actuelle
-                        ListBoxPlayers.Items.Clear();
+                        // Effacer les listes actuelles
+                        _allPlayersList.Clear();
+                        ListBoxAllPlayers.Items.Clear();
+                        ListBoxPresentPlayers.Items.Clear();
 
-                        // Ajouter tous les joueurs (tous cochés par défaut)
+                        // Ajouter tous les joueurs
+                        _allPlayersList.AddRange(allPlayers);
+                        RefreshAllPlayersList();
+
+                        // Tous présents par défaut
                         foreach (string playerName in allPlayers)
                         {
-                            int index = ListBoxPlayers.Items.Add(playerName);
-                            ListBoxPlayers.SetItemChecked(index, true);
+                            ListBoxPresentPlayers.Items.Add(playerName);
                         }
 
-                        UpdateTournamentInfoFromCheckedPlayers();
+                        UpdateTournamentInfoFromPresentPlayers();
                         UpdateGenerateButtonState();
 
                         MessageBox.Show(
                             $"{allPlayers.Count} joueur(s) chargé(s) avec succès!\n\n" +
-                            "Décochez les joueurs absents avant de générer le tournoi",
+                            "Utilisez le drag & drop pour gérer les joueurs présents",
                             "Succès",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
@@ -544,23 +561,23 @@ namespace RoundRobin
 
         private void BtnGenerateMatches_Click(object sender, EventArgs e)
         {
-            // Vérifier le nombre de joueurs cochés
-            int checkedPlayersCount = ListBoxPlayers.CheckedItems.Count;
+            // Vérifier le nombre de joueurs présents
+            int presentPlayersCount = ListBoxPresentPlayers.Items.Count;
 
-            if (checkedPlayersCount < 2)
+            if (presentPlayersCount < 2)
             {
                 MessageBox.Show(
-                    "Vous devez cocher au moins 2 joueurs pour générer les matchs.",
+                    "Vous devez avoir au moins 2 joueurs présents pour générer les matchs.",
                     "Erreur",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 return;
             }
 
-            // Mettre à jour le TournamentManager avec uniquement les joueurs cochés
+            // Mettre à jour le TournamentManager avec les joueurs présents
             _tournamentManager.Players.Clear();
             int playerId = 1;
-            foreach (string playerName in ListBoxPlayers.CheckedItems)
+            foreach (string playerName in ListBoxPresentPlayers.Items)
             {
                 _tournamentManager.Players.Add(new Player(playerId, playerName));
                 playerId++;
@@ -575,7 +592,7 @@ namespace RoundRobin
             TabControl1.SelectedTab = TabPageMatches;
 
             string message = $"Tournoi généré avec succès!\n\n";
-            message += $"Nombre de joueurs : {checkedPlayersCount}\n";
+            message += $"Nombre de joueurs : {presentPlayersCount}\n";
             message += $"Nombre de tours : {_tournamentManager.TotalRounds}\n";
             message += $"Total de matchs : {_tournamentManager.Matches.Count}\n";
             message += $"Matchs par tour : {_tournamentManager.Matches.Count / _tournamentManager.TotalRounds}";
@@ -910,7 +927,10 @@ namespace RoundRobin
             if (result == DialogResult.Yes)
             {
                 _tournamentManager.ResetTournament();
-                ListBoxPlayers.Items.Clear();
+                _allPlayersList.Clear();
+                ListBoxAllPlayers.Items.Clear();
+                ListBoxPresentPlayers.Items.Clear();
+                TxtFilterPlayers.Clear();
                 ComboBoxRound.Items.Clear();
                 DataGridViewMatches.DataSource = null;
                 DataGridViewRankings.DataSource = null;
@@ -927,11 +947,11 @@ namespace RoundRobin
             }
         }
 
-        private void UpdateTournamentInfoFromCheckedPlayers()
+        private void UpdateTournamentInfoFromPresentPlayers()
         {
-            int checkedCount = ListBoxPlayers.CheckedItems.Count;
+            int presentCount = ListBoxPresentPlayers.Items.Count;
 
-            if (checkedCount < 2)
+            if (presentCount < 2)
             {
                 LabelTotalMatches.Text = "Total de matchs : --";
                 LabelTotalRounds.Text = "Nombre de tours : --";
@@ -942,10 +962,10 @@ namespace RoundRobin
                 return;
             }
 
-            // Calculs basés sur les joueurs cochés
-            int totalMatches = (checkedCount * (checkedCount - 1)) / 2;
-            int totalRounds = checkedCount % 2 == 0 ? checkedCount - 1 : checkedCount;
-            int matchesPerRound = checkedCount / 2;
+            // Calculs basés sur les joueurs présents
+            int totalMatches = (presentCount * (presentCount - 1)) / 2;
+            int totalRounds = presentCount % 2 == 0 ? presentCount - 1 : presentCount;
+            int matchesPerRound = presentCount / 2;
 
             // Durées en minutes
             int duration3Sets = totalRounds * 15;
@@ -953,7 +973,7 @@ namespace RoundRobin
 
             // Mise à jour des labels
             LabelTotalMatches.Text = $"Total de matchs : {totalMatches}";
-            LabelTotalRounds.Text = $"Nombre de tours : {totalRounds} ({checkedCount} joueurs présents)";
+            LabelTotalRounds.Text = $"Nombre de tours : {totalRounds} ({presentCount} joueurs présents)";
 
             LabelDuration3Sets.Text = $"⏱️ Durée totale (3 manches) : {FormatDuration(duration3Sets)}";
             LabelDuration5Sets.Text = $"⏱️ Durée totale (5 manches) : {FormatDuration(duration5Sets)}";
@@ -962,44 +982,35 @@ namespace RoundRobin
             LabelDurationPerRound5Sets.Text = $"   • {matchesPerRound} matchs simultanés : 25 min/tour";
         }
 
-        // Ajout de la méthode manquante pour corriger CS0103
-        private void ListBoxPlayers_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            // Met à jour les infos du tournoi en fonction des joueurs cochés/décochés
-            // L'appel doit être différé car CheckedItems n'est pas encore mis à jour lors de l'événement
-            BeginInvoke((Action)(() =>
-            {
-                UpdateTournamentInfoFromCheckedPlayers();
-                UpdateGenerateButtonState();
-            }));
-        }
-
         private void UpdateGenerateButtonState()
         {
-            // Activer le bouton seulement si au moins 2 joueurs sont cochés
-            BtnGenerateMatches.Enabled = ListBoxPlayers.CheckedItems.Count >= 2;
-        }
-
-        private void SetAllPlayersCheckedState(bool isChecked)
-        {
-            // Cocher ou décocher tous les joueurs selon le paramètre
-            for (int i = 0; i < ListBoxPlayers.Items.Count; i++)
-            {
-                ListBoxPlayers.SetItemChecked(i, isChecked);
-            }
-
-            UpdateTournamentInfoFromCheckedPlayers();
-            UpdateGenerateButtonState();
+            // Activer le bouton seulement si au moins 2 joueurs sont présents
+            BtnGenerateMatches.Enabled = ListBoxPresentPlayers.Items.Count >= 2;
         }
 
         private void BtnCheckAll_Click(object sender, EventArgs e)
         {
-            SetAllPlayersCheckedState(true);
+            // Ajouter tous les joueurs de la liste complète dans la liste des présents
+            ListBoxPresentPlayers.Items.Clear();
+            foreach (string playerName in _allPlayersList)
+            {
+                if (!ListBoxPresentPlayers.Items.Contains(playerName))
+                {
+                    ListBoxPresentPlayers.Items.Add(playerName);
+                }
+            }
+
+            UpdateTournamentInfoFromPresentPlayers();
+            UpdateGenerateButtonState();
         }
 
         private void BtnUncheckAll_Click(object sender, EventArgs e)
         {
-            SetAllPlayersCheckedState(false);
+            // Retirer tous les joueurs de la liste des présents
+            ListBoxPresentPlayers.Items.Clear();
+
+            UpdateTournamentInfoFromPresentPlayers();
+            UpdateGenerateButtonState();
         }
 
         private bool ValidatePlayerName(string name)
@@ -1009,5 +1020,167 @@ namespace RoundRobin
             // Éviter les doublons insensibles à la casse
             return Regex.IsMatch(name, @"^[a-zA-ZÀ-ÿ\s\-']{2,50}$");
         }
+
+        #region Drag & Drop et Filtre
+
+        private void RefreshAllPlayersList()
+        {
+            string filter = TxtFilterPlayers.Text.ToLower();
+            ListBoxAllPlayers.Items.Clear();
+
+            foreach (string playerName in _allPlayersList)
+            {
+                // N'afficher que les joueurs qui ne sont pas dans la liste des présents
+                if (!ListBoxPresentPlayers.Items.Contains(playerName))
+                {
+                    // Appliquer le filtre
+                    if (string.IsNullOrEmpty(filter) || playerName.ToLower().Contains(filter))
+                    {
+                        ListBoxAllPlayers.Items.Add(playerName);
+                    }
+                }
+            }
+        }
+
+        private void TxtFilterPlayers_TextChanged(object sender, EventArgs e)
+        {
+            RefreshAllPlayersList();
+        }
+
+        private void BtnClearFilter_Click(object sender, EventArgs e)
+        {
+            TxtFilterPlayers.Clear();
+            TxtFilterPlayers.Focus();
+        }
+
+        private void ListBoxAllPlayers_DoubleClick(object sender, EventArgs e)
+        {
+            // Transférer le joueur sélectionné vers la liste des présents
+            if (ListBoxAllPlayers.SelectedItem != null)
+            {
+                string selectedPlayer = ListBoxAllPlayers.SelectedItem.ToString();
+
+                // Ajouter à la liste des présents
+                if (!ListBoxPresentPlayers.Items.Contains(selectedPlayer))
+                {
+                    ListBoxPresentPlayers.Items.Add(selectedPlayer);
+                }
+
+                // Rafraîchir la liste complète (le joueur sera automatiquement retiré)
+                RefreshAllPlayersList();
+                UpdateTournamentInfoFromPresentPlayers();
+                UpdateGenerateButtonState();
+            }
+        }
+
+        private void ListBoxPresentPlayers_DoubleClick(object sender, EventArgs e)
+        {
+            // Transférer le joueur sélectionné vers la liste complète (le retirer des présents)
+            if (ListBoxPresentPlayers.SelectedItem != null)
+            {
+                string selectedPlayer = ListBoxPresentPlayers.SelectedItem.ToString();
+
+                // Retirer de la liste des présents
+                ListBoxPresentPlayers.Items.Remove(selectedPlayer);
+
+                // Rafraîchir la liste complète (le joueur sera automatiquement ajouté)
+                RefreshAllPlayersList();
+                UpdateTournamentInfoFromPresentPlayers();
+                UpdateGenerateButtonState();
+            }
+        }
+
+        private void ListBoxAllPlayers_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (ListBoxAllPlayers.SelectedItems.Count == 0)
+                return;
+
+            var selectedItems = new List<string>();
+            foreach (string item in ListBoxAllPlayers.SelectedItems)
+            {
+                selectedItems.Add(item);
+            }
+
+            ListBoxAllPlayers.DoDragDrop(selectedItems, DragDropEffects.Move);
+        }
+
+        private void ListBoxPresentPlayers_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (ListBoxPresentPlayers.SelectedItems.Count == 0)
+                return;
+
+            var selectedItems = new List<string>();
+            foreach (string item in ListBoxPresentPlayers.SelectedItems)
+            {
+                selectedItems.Add(item);
+            }
+
+            ListBoxPresentPlayers.DoDragDrop(selectedItems, DragDropEffects.Move);
+        }
+
+        private void ListBoxAllPlayers_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(List<string>)))
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void ListBoxPresentPlayers_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(List<string>)))
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void ListBoxAllPlayers_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(List<string>)))
+            {
+                var items = (List<string>)e.Data.GetData(typeof(List<string>));
+
+                // Retirer les joueurs de la liste des présents et rafraîchir la liste complète
+                foreach (string item in items)
+                {
+                    ListBoxPresentPlayers.Items.Remove(item);
+                }
+
+                RefreshAllPlayersList();
+                UpdateTournamentInfoFromPresentPlayers();
+                UpdateGenerateButtonState();
+            }
+        }
+
+        private void ListBoxPresentPlayers_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(List<string>)))
+            {
+                var items = (List<string>)e.Data.GetData(typeof(List<string>));
+
+                // Ajouter les joueurs à la liste des présents
+                foreach (string item in items)
+                {
+                    if (!ListBoxPresentPlayers.Items.Contains(item))
+                    {
+                        ListBoxPresentPlayers.Items.Add(item);
+                    }
+                }
+
+                RefreshAllPlayersList();
+                UpdateTournamentInfoFromPresentPlayers();
+                UpdateGenerateButtonState();
+            }
+        }
+
+        #endregion
     }
 }

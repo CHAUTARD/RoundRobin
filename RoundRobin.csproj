@@ -72,6 +72,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="COMMANDES_RAPIDES.md" />
+    <None Include="CreateDistribution.ps1" />
+    <None Include="GUIDE_SETUP_PROJECT.md" />
+    <None Include="INSTALLATION_GUIDE.md" />
+    <None Include="License.rtf" />
+    <None Include="MODIFICATIONS_INTERFACE.md" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -82,6 +88,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="README.md" />
+    <None Include="README_SETUP.md" />
+    <None Include="SetupHelper.ps1" />
+    <None Include="SETUP_QUICK_START.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -99,6 +108,7 @@
     <None Include="Images\Ajouter_64.png" />
     <None Include="Images\Fleche_Gauche_64.png" />
     <None Include="Images\Fleche_Droite_64.png" />
+    <None Include="Images\gomme.png" />
     <Content Include="LICENSE.txt" />
     <None Include="Logo.png" />
   </ItemGroup>

@@ -32,11 +32,11 @@ namespace RoundRobin
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ContextMenuStripPlayer = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuItemAbandon = new System.Windows.Forms.ToolStripMenuItem();
             this.TabPageRankings = new System.Windows.Forms.TabPage();
@@ -47,8 +47,20 @@ namespace RoundRobin
             this.Label5 = new System.Windows.Forms.Label();
             this.ComboBoxRound = new System.Windows.Forms.ComboBox();
             this.DataGridViewMatches = new System.Windows.Forms.DataGridView();
+            this.ColMatch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColJoueur1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColVS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColJoueur2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColResultat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnNextRound = new System.Windows.Forms.Button();
+            this.BtnPreviousRound = new System.Windows.Forms.Button();
             this.TabPageSetup = new System.Windows.Forms.TabPage();
+            this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStripStatusLabelCopyright = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.BtnCheckAll = new System.Windows.Forms.Button();
+            this.BtnUncheckAll = new System.Windows.Forms.Button();
+            this.BtnLoadFromFile = new System.Windows.Forms.Button();
             this.GroupBoxTournamentInfo = new System.Windows.Forms.GroupBox();
             this.LabelDurationPerRound5Sets = new System.Windows.Forms.Label();
             this.LabelDurationPerRound3Sets = new System.Windows.Forms.Label();
@@ -56,38 +68,28 @@ namespace RoundRobin
             this.LabelDuration3Sets = new System.Windows.Forms.Label();
             this.LabelTotalRounds = new System.Windows.Forms.Label();
             this.LabelTotalMatches = new System.Windows.Forms.Label();
-            this.TxtPlayerName = new System.Windows.Forms.TextBox();
-            this.ListBoxPlayers = new System.Windows.Forms.CheckedListBox();
-            this.Label1 = new System.Windows.Forms.Label();
-            this.TabControl1 = new System.Windows.Forms.TabControl();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnCheckAll = new System.Windows.Forms.Button();
-            this.BtnUncheckAll = new System.Windows.Forms.Button();
-            this.BtnLoadFromFile = new System.Windows.Forms.Button();
             this.BtnResetTournament = new System.Windows.Forms.Button();
             this.BtnGenerateMatches = new System.Windows.Forms.Button();
             this.BtnAddPlayer = new System.Windows.Forms.Button();
-            this.BtnNextRound = new System.Windows.Forms.Button();
-            this.BtnPreviousRound = new System.Windows.Forms.Button();
-            this.ColMatch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColJoueur1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColVS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColJoueur2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColResultat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TxtPlayerName = new System.Windows.Forms.TextBox();
+            this.ListBoxAllPlayers = new System.Windows.Forms.ListBox();
+            this.ListBoxPresentPlayers = new System.Windows.Forms.ListBox();
+            this.TxtFilterPlayers = new System.Windows.Forms.TextBox();
+            this.BtnClearFilter = new System.Windows.Forms.Button();
+            this.LabelAllPlayers = new System.Windows.Forms.Label();
+            this.LabelPresentPlayers = new System.Windows.Forms.Label();
+            this.Label1 = new System.Windows.Forms.Label();
+            this.TabControl1 = new System.Windows.Forms.TabControl();
             this.ContextMenuStripPlayer.SuspendLayout();
             this.TabPageRankings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewRankings)).BeginInit();
             this.TabPageMatches.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMatches)).BeginInit();
             this.TabPageSetup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.toolStripStatusLabelCopyright.SuspendLayout();
             this.GroupBoxTournamentInfo.SuspendLayout();
             this.TabControl1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ContextMenuStripPlayer
@@ -110,7 +112,7 @@ namespace RoundRobin
             this.TabPageRankings.Controls.Add(this.Label2);
             this.TabPageRankings.Location = new System.Drawing.Point(4, 25);
             this.TabPageRankings.Name = "TabPageRankings";
-            this.TabPageRankings.Size = new System.Drawing.Size(1027, 680);
+            this.TabPageRankings.Size = new System.Drawing.Size(1008, 680);
             this.TabPageRankings.TabIndex = 2;
             this.TabPageRankings.Text = "Classement";
             this.TabPageRankings.UseVisualStyleBackColor = true;
@@ -149,7 +151,7 @@ namespace RoundRobin
             this.TabPageMatches.Location = new System.Drawing.Point(4, 25);
             this.TabPageMatches.Name = "TabPageMatches";
             this.TabPageMatches.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPageMatches.Size = new System.Drawing.Size(1027, 680);
+            this.TabPageMatches.Size = new System.Drawing.Size(1008, 680);
             this.TabPageMatches.TabIndex = 1;
             this.TabPageMatches.Text = "Matchs";
             this.TabPageMatches.UseVisualStyleBackColor = true;
@@ -206,11 +208,93 @@ namespace RoundRobin
             this.DataGridViewMatches.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewMatches_CellDoubleClick);
             this.DataGridViewMatches.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewMatches_CellMouseDown);
             // 
+            // ColMatch
+            // 
+            this.ColMatch.DataPropertyName = "Match";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColMatch.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColMatch.Frozen = true;
+            this.ColMatch.HeaderText = "Match";
+            this.ColMatch.Name = "ColMatch";
+            this.ColMatch.ReadOnly = true;
+            this.ColMatch.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColMatch.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ColMatch.Width = 80;
+            // 
+            // ColJoueur1
+            // 
+            this.ColJoueur1.DataPropertyName = "Joueur1";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.ColJoueur1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColJoueur1.Frozen = true;
+            this.ColJoueur1.HeaderText = "Joueur1";
+            this.ColJoueur1.Name = "ColJoueur1";
+            this.ColJoueur1.ReadOnly = true;
+            this.ColJoueur1.Width = 280;
+            // 
+            // ColVS
+            // 
+            this.ColVS.DataPropertyName = "VS";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColVS.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColVS.Frozen = true;
+            this.ColVS.HeaderText = "VS";
+            this.ColVS.Name = "ColVS";
+            this.ColVS.ReadOnly = true;
+            this.ColVS.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColVS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColVS.Width = 40;
+            // 
+            // ColJoueur2
+            // 
+            this.ColJoueur2.DataPropertyName = "Joueur2";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColJoueur2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ColJoueur2.Frozen = true;
+            this.ColJoueur2.HeaderText = "Joueur2";
+            this.ColJoueur2.Name = "ColJoueur2";
+            this.ColJoueur2.ReadOnly = true;
+            this.ColJoueur2.Width = 280;
+            // 
+            // ColResultat
+            // 
+            this.ColResultat.DataPropertyName = "Resultat";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.ColResultat.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ColResultat.Frozen = true;
+            this.ColResultat.HeaderText = "Résultat";
+            this.ColResultat.Name = "ColResultat";
+            this.ColResultat.ReadOnly = true;
+            this.ColResultat.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColResultat.Width = 280;
+            // 
+            // BtnNextRound
+            // 
+            this.BtnNextRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnNextRound.Image = global::RoundRobin.Properties.Resources.Fleche_Droite_64;
+            this.BtnNextRound.Location = new System.Drawing.Point(322, 12);
+            this.BtnNextRound.Name = "BtnNextRound";
+            this.BtnNextRound.Size = new System.Drawing.Size(74, 54);
+            this.BtnNextRound.TabIndex = 9;
+            this.BtnNextRound.UseVisualStyleBackColor = true;
+            this.BtnNextRound.Click += new System.EventHandler(this.BtnNextRound_Click);
+            // 
+            // BtnPreviousRound
+            // 
+            this.BtnPreviousRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnPreviousRound.Image = global::RoundRobin.Properties.Resources.Fleche_Gauche_64;
+            this.BtnPreviousRound.Location = new System.Drawing.Point(86, 13);
+            this.BtnPreviousRound.Name = "BtnPreviousRound";
+            this.BtnPreviousRound.Size = new System.Drawing.Size(74, 54);
+            this.BtnPreviousRound.TabIndex = 8;
+            this.BtnPreviousRound.UseVisualStyleBackColor = true;
+            this.BtnPreviousRound.Click += new System.EventHandler(this.BtnPreviousRound_Click);
+            // 
             // TabPageSetup
             // 
-            this.TabPageSetup.Controls.Add(this.groupBox1);
+            this.TabPageSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TabPageSetup.Controls.Add(this.PictureBox1);
             this.TabPageSetup.Controls.Add(this.toolStripStatusLabelCopyright);
-            this.TabPageSetup.Controls.Add(this.pictureBox1);
             this.TabPageSetup.Controls.Add(this.BtnCheckAll);
             this.TabPageSetup.Controls.Add(this.BtnUncheckAll);
             this.TabPageSetup.Controls.Add(this.BtnLoadFromFile);
@@ -219,24 +303,85 @@ namespace RoundRobin
             this.TabPageSetup.Controls.Add(this.BtnGenerateMatches);
             this.TabPageSetup.Controls.Add(this.BtnAddPlayer);
             this.TabPageSetup.Controls.Add(this.TxtPlayerName);
-            this.TabPageSetup.Controls.Add(this.ListBoxPlayers);
+            this.TabPageSetup.Controls.Add(this.ListBoxAllPlayers);
+            this.TabPageSetup.Controls.Add(this.ListBoxPresentPlayers);
+            this.TabPageSetup.Controls.Add(this.TxtFilterPlayers);
+            this.TabPageSetup.Controls.Add(this.BtnClearFilter);
+            this.TabPageSetup.Controls.Add(this.LabelAllPlayers);
+            this.TabPageSetup.Controls.Add(this.LabelPresentPlayers);
             this.TabPageSetup.Controls.Add(this.Label1);
-            this.TabPageSetup.Location = new System.Drawing.Point(4, 22);
+            this.TabPageSetup.Location = new System.Drawing.Point(4, 25);
             this.TabPageSetup.Name = "TabPageSetup";
             this.TabPageSetup.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPageSetup.Size = new System.Drawing.Size(1027, 683);
+            this.TabPageSetup.Size = new System.Drawing.Size(1008, 680);
             this.TabPageSetup.TabIndex = 0;
             this.TabPageSetup.Text = "Configuration";
             this.TabPageSetup.UseVisualStyleBackColor = true;
+            // 
+            // PictureBox1
+            // 
+            this.PictureBox1.Image = global::RoundRobin.Properties.Resources.Logo1;
+            this.PictureBox1.Location = new System.Drawing.Point(861, 0);
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.Size = new System.Drawing.Size(122, 122);
+            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBox1.TabIndex = 15;
+            this.PictureBox1.TabStop = false;
             // 
             // toolStripStatusLabelCopyright
             // 
             this.toolStripStatusLabelCopyright.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.toolStripStatusLabelCopyright.Location = new System.Drawing.Point(3, 658);
+            this.toolStripStatusLabelCopyright.Location = new System.Drawing.Point(3, 655);
             this.toolStripStatusLabelCopyright.Name = "toolStripStatusLabelCopyright";
-            this.toolStripStatusLabelCopyright.Size = new System.Drawing.Size(1021, 22);
+            this.toolStripStatusLabelCopyright.Size = new System.Drawing.Size(1002, 22);
             this.toolStripStatusLabelCopyright.TabIndex = 11;
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(987, 17);
+            this.toolStripStatusLabel1.Spring = true;
+            this.toolStripStatusLabel1.Text = "© 2026 Patrick CH. - V1.0";
+            // 
+            // BtnCheckAll
+            // 
+            this.BtnCheckAll.Image = global::RoundRobin.Properties.Resources.tout_cocher_64;
+            this.BtnCheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCheckAll.Location = new System.Drawing.Point(412, 362);
+            this.BtnCheckAll.Name = "BtnCheckAll";
+            this.BtnCheckAll.Size = new System.Drawing.Size(150, 76);
+            this.BtnCheckAll.TabIndex = 8;
+            this.BtnCheckAll.Text = "Tout &ajouter";
+            this.BtnCheckAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnCheckAll.UseVisualStyleBackColor = true;
+            this.BtnCheckAll.Click += new System.EventHandler(this.BtnCheckAll_Click);
+            // 
+            // BtnUncheckAll
+            // 
+            this.BtnUncheckAll.Image = global::RoundRobin.Properties.Resources.tout_decocher_64;
+            this.BtnUncheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnUncheckAll.Location = new System.Drawing.Point(412, 453);
+            this.BtnUncheckAll.Name = "BtnUncheckAll";
+            this.BtnUncheckAll.Size = new System.Drawing.Size(150, 76);
+            this.BtnUncheckAll.TabIndex = 9;
+            this.BtnUncheckAll.Text = "Tout &retirer";
+            this.BtnUncheckAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnUncheckAll.UseVisualStyleBackColor = true;
+            this.BtnUncheckAll.Click += new System.EventHandler(this.BtnUncheckAll_Click);
+            // 
+            // BtnLoadFromFile
+            // 
+            this.BtnLoadFromFile.Image = global::RoundRobin.Properties.Resources.Directory_64;
+            this.BtnLoadFromFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnLoadFromFile.Location = new System.Drawing.Point(401, 6);
+            this.BtnLoadFromFile.Name = "BtnLoadFromFile";
+            this.BtnLoadFromFile.Size = new System.Drawing.Size(191, 76);
+            this.BtnLoadFromFile.TabIndex = 7;
+            this.BtnLoadFromFile.Text = "Charger un &fichier";
+            this.BtnLoadFromFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnLoadFromFile.UseVisualStyleBackColor = true;
+            this.BtnLoadFromFile.Click += new System.EventHandler(this.BtnLoadFromFile_Click);
             // 
             // GroupBoxTournamentInfo
             // 
@@ -247,9 +392,9 @@ namespace RoundRobin
             this.GroupBoxTournamentInfo.Controls.Add(this.LabelTotalRounds);
             this.GroupBoxTournamentInfo.Controls.Add(this.LabelTotalMatches);
             this.GroupBoxTournamentInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxTournamentInfo.Location = new System.Drawing.Point(378, 17);
+            this.GroupBoxTournamentInfo.Location = new System.Drawing.Point(374, 100);
             this.GroupBoxTournamentInfo.Name = "GroupBoxTournamentInfo";
-            this.GroupBoxTournamentInfo.Size = new System.Drawing.Size(300, 220);
+            this.GroupBoxTournamentInfo.Size = new System.Drawing.Size(262, 220);
             this.GroupBoxTournamentInfo.TabIndex = 6;
             this.GroupBoxTournamentInfo.TabStop = false;
             this.GroupBoxTournamentInfo.Text = "📊 Informations sur le tournoi";
@@ -318,27 +463,127 @@ namespace RoundRobin
             this.LabelTotalMatches.TabIndex = 0;
             this.LabelTotalMatches.Text = "Total de matchs : --";
             // 
+            // BtnResetTournament
+            // 
+            this.BtnResetTournament.Image = global::RoundRobin.Properties.Resources.Corbeille_64;
+            this.BtnResetTournament.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnResetTournament.Location = new System.Drawing.Point(20, 559);
+            this.BtnResetTournament.Name = "BtnResetTournament";
+            this.BtnResetTournament.Size = new System.Drawing.Size(321, 76);
+            this.BtnResetTournament.TabIndex = 5;
+            this.BtnResetTournament.Text = "&Réinitialiser le tournoi";
+            this.BtnResetTournament.UseVisualStyleBackColor = true;
+            this.BtnResetTournament.Click += new System.EventHandler(this.BtnResetTournament_Click);
+            // 
+            // BtnGenerateMatches
+            // 
+            this.BtnGenerateMatches.Enabled = false;
+            this.BtnGenerateMatches.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnGenerateMatches.Image = global::RoundRobin.Properties.Resources.Go_64;
+            this.BtnGenerateMatches.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnGenerateMatches.Location = new System.Drawing.Point(664, 559);
+            this.BtnGenerateMatches.Name = "BtnGenerateMatches";
+            this.BtnGenerateMatches.Size = new System.Drawing.Size(321, 76);
+            this.BtnGenerateMatches.TabIndex = 4;
+            this.BtnGenerateMatches.Text = "&Générer les matchs par tour";
+            this.BtnGenerateMatches.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnGenerateMatches.UseVisualStyleBackColor = true;
+            this.BtnGenerateMatches.Click += new System.EventHandler(this.BtnGenerateMatches_Click);
+            // 
+            // BtnAddPlayer
+            // 
+            this.BtnAddPlayer.Image = global::RoundRobin.Properties.Resources.Ajouter_64;
+            this.BtnAddPlayer.Location = new System.Drawing.Point(245, 6);
+            this.BtnAddPlayer.Name = "BtnAddPlayer";
+            this.BtnAddPlayer.Size = new System.Drawing.Size(96, 76);
+            this.BtnAddPlayer.TabIndex = 3;
+            this.BtnAddPlayer.Text = "&Ajouter";
+            this.BtnAddPlayer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnAddPlayer.UseVisualStyleBackColor = true;
+            this.BtnAddPlayer.Click += new System.EventHandler(this.BtnAddPlayer_Click);
+            // 
             // TxtPlayerName
             // 
-            this.TxtPlayerName.Location = new System.Drawing.Point(20, 32);
+            this.TxtPlayerName.Location = new System.Drawing.Point(20, 38);
             this.TxtPlayerName.Name = "TxtPlayerName";
-            this.TxtPlayerName.Size = new System.Drawing.Size(219, 22);
+            this.TxtPlayerName.Size = new System.Drawing.Size(207, 22);
             this.TxtPlayerName.TabIndex = 2;
             // 
-            // ListBoxPlayers
+            // ListBoxAllPlayers
             // 
-            this.ListBoxPlayers.CheckOnClick = true;
-            this.ListBoxPlayers.FormattingEnabled = true;
-            this.ListBoxPlayers.Location = new System.Drawing.Point(20, 80);
-            this.ListBoxPlayers.Name = "ListBoxPlayers";
-            this.ListBoxPlayers.Size = new System.Drawing.Size(321, 394);
-            this.ListBoxPlayers.TabIndex = 1;
+            this.ListBoxAllPlayers.AllowDrop = true;
+            this.ListBoxAllPlayers.FormattingEnabled = true;
+            this.ListBoxAllPlayers.ItemHeight = 16;
+            this.ListBoxAllPlayers.Location = new System.Drawing.Point(20, 125);
+            this.ListBoxAllPlayers.Name = "ListBoxAllPlayers";
+            this.ListBoxAllPlayers.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.ListBoxAllPlayers.Size = new System.Drawing.Size(321, 404);
+            this.ListBoxAllPlayers.TabIndex = 13;
+            this.ListBoxAllPlayers.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListBoxAllPlayers_DragDrop);
+            this.ListBoxAllPlayers.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListBoxAllPlayers_DragEnter);
+            this.ListBoxAllPlayers.DoubleClick += new System.EventHandler(this.ListBoxAllPlayers_DoubleClick);
+            this.ListBoxAllPlayers.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ListBoxAllPlayers_MouseDown);
+            // 
+            // ListBoxPresentPlayers
+            // 
+            this.ListBoxPresentPlayers.AllowDrop = true;
+            this.ListBoxPresentPlayers.FormattingEnabled = true;
+            this.ListBoxPresentPlayers.ItemHeight = 16;
+            this.ListBoxPresentPlayers.Location = new System.Drawing.Point(664, 125);
+            this.ListBoxPresentPlayers.Name = "ListBoxPresentPlayers";
+            this.ListBoxPresentPlayers.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.ListBoxPresentPlayers.Size = new System.Drawing.Size(321, 404);
+            this.ListBoxPresentPlayers.TabIndex = 14;
+            this.ListBoxPresentPlayers.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListBoxPresentPlayers_DragDrop);
+            this.ListBoxPresentPlayers.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListBoxPresentPlayers_DragEnter);
+            this.ListBoxPresentPlayers.DoubleClick += new System.EventHandler(this.ListBoxPresentPlayers_DoubleClick);
+            this.ListBoxPresentPlayers.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ListBoxPresentPlayers_MouseDown);
+            // 
+            // TxtFilterPlayers
+            // 
+            this.TxtFilterPlayers.Location = new System.Drawing.Point(20, 100);
+            this.TxtFilterPlayers.Name = "TxtFilterPlayers";
+            this.TxtFilterPlayers.Size = new System.Drawing.Size(280, 22);
+            this.TxtFilterPlayers.TabIndex = 10;
+            this.TxtFilterPlayers.TextChanged += new System.EventHandler(this.TxtFilterPlayers_TextChanged);
+            // 
+            // BtnClearFilter
+            // 
+            this.BtnClearFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnClearFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnClearFilter.Image = global::RoundRobin.Properties.Resources.gomme;
+            this.BtnClearFilter.Location = new System.Drawing.Point(305, 98);
+            this.BtnClearFilter.Name = "BtnClearFilter";
+            this.BtnClearFilter.Size = new System.Drawing.Size(36, 26);
+            this.BtnClearFilter.TabIndex = 15;
+            this.BtnClearFilter.UseVisualStyleBackColor = true;
+            this.BtnClearFilter.Click += new System.EventHandler(this.BtnClearFilter_Click);
+            // 
+            // LabelAllPlayers
+            // 
+            this.LabelAllPlayers.AutoSize = true;
+            this.LabelAllPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelAllPlayers.Location = new System.Drawing.Point(17, 82);
+            this.LabelAllPlayers.Name = "LabelAllPlayers";
+            this.LabelAllPlayers.Size = new System.Drawing.Size(120, 15);
+            this.LabelAllPlayers.TabIndex = 11;
+            this.LabelAllPlayers.Text = "Filtre sur le nom :";
+            // 
+            // LabelPresentPlayers
+            // 
+            this.LabelPresentPlayers.AutoSize = true;
+            this.LabelPresentPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPresentPlayers.Location = new System.Drawing.Point(660, 102);
+            this.LabelPresentPlayers.Name = "LabelPresentPlayers";
+            this.LabelPresentPlayers.Size = new System.Drawing.Size(153, 20);
+            this.LabelPresentPlayers.TabIndex = 12;
+            this.LabelPresentPlayers.Text = "Joueurs présents:";
             // 
             // Label1
             // 
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Label1.Location = new System.Drawing.Point(17, 62);
+            this.Label1.Location = new System.Drawing.Point(17, 15);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(62, 15);
             this.Label1.TabIndex = 0;
@@ -354,211 +599,14 @@ namespace RoundRobin
             this.TabControl1.Location = new System.Drawing.Point(0, 0);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
-            this.TabControl1.Size = new System.Drawing.Size(1035, 709);
+            this.TabControl1.Size = new System.Drawing.Size(1016, 709);
             this.TabControl1.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(381, 486);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(296, 117);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Simple Round Robin";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(17, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(254, 64);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Un tournoi simple round robin est un\r\nformat de compétition où chaque \r\nparticipa" +
-    "nt affronte tous les autres \r\nparticipants une fois.";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(1006, 17);
-            this.toolStripStatusLabel1.Spring = true;
-            this.toolStripStatusLabel1.Text = "© 2026 Patrick CH. - V1.0";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::RoundRobin.Properties.Resources.Logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(705, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(569, 627);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
-            // BtnCheckAll
-            // 
-            this.BtnCheckAll.Image = global::RoundRobin.Properties.Resources.tout_cocher_64;
-            this.BtnCheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCheckAll.Location = new System.Drawing.Point(20, 482);
-            this.BtnCheckAll.Name = "BtnCheckAll";
-            this.BtnCheckAll.Size = new System.Drawing.Size(150, 76);
-            this.BtnCheckAll.TabIndex = 8;
-            this.BtnCheckAll.Text = "Tout &cocher";
-            this.BtnCheckAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnCheckAll.UseVisualStyleBackColor = true;
-            this.BtnCheckAll.Click += new System.EventHandler(this.BtnCheckAll_Click);
-            // 
-            // BtnUncheckAll
-            // 
-            this.BtnUncheckAll.Image = global::RoundRobin.Properties.Resources.tout_decocher_64;
-            this.BtnUncheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnUncheckAll.Location = new System.Drawing.Point(191, 482);
-            this.BtnUncheckAll.Name = "BtnUncheckAll";
-            this.BtnUncheckAll.Size = new System.Drawing.Size(150, 76);
-            this.BtnUncheckAll.TabIndex = 9;
-            this.BtnUncheckAll.Text = "Tout &décocher";
-            this.BtnUncheckAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnUncheckAll.UseVisualStyleBackColor = true;
-            this.BtnUncheckAll.Click += new System.EventHandler(this.BtnUncheckAll_Click);
-            // 
-            // BtnLoadFromFile
-            // 
-            this.BtnLoadFromFile.Image = global::RoundRobin.Properties.Resources.Directory_64;
-            this.BtnLoadFromFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnLoadFromFile.Location = new System.Drawing.Point(20, 579);
-            this.BtnLoadFromFile.Name = "BtnLoadFromFile";
-            this.BtnLoadFromFile.Size = new System.Drawing.Size(321, 76);
-            this.BtnLoadFromFile.TabIndex = 7;
-            this.BtnLoadFromFile.Text = "Charger la &liste depuis un fichier";
-            this.BtnLoadFromFile.UseVisualStyleBackColor = true;
-            this.BtnLoadFromFile.Click += new System.EventHandler(this.BtnLoadFromFile_Click);
-            // 
-            // BtnResetTournament
-            // 
-            this.BtnResetTournament.Image = global::RoundRobin.Properties.Resources.Corbeille_64;
-            this.BtnResetTournament.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnResetTournament.Location = new System.Drawing.Point(378, 363);
-            this.BtnResetTournament.Name = "BtnResetTournament";
-            this.BtnResetTournament.Size = new System.Drawing.Size(300, 76);
-            this.BtnResetTournament.TabIndex = 5;
-            this.BtnResetTournament.Text = "&Réinitialiser le tournoi";
-            this.BtnResetTournament.UseVisualStyleBackColor = true;
-            this.BtnResetTournament.Click += new System.EventHandler(this.BtnResetTournament_Click);
-            // 
-            // BtnGenerateMatches
-            // 
-            this.BtnGenerateMatches.Enabled = false;
-            this.BtnGenerateMatches.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnGenerateMatches.Image = global::RoundRobin.Properties.Resources.Go_64;
-            this.BtnGenerateMatches.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGenerateMatches.Location = new System.Drawing.Point(378, 269);
-            this.BtnGenerateMatches.Name = "BtnGenerateMatches";
-            this.BtnGenerateMatches.Size = new System.Drawing.Size(300, 76);
-            this.BtnGenerateMatches.TabIndex = 4;
-            this.BtnGenerateMatches.Text = "&Générer les matchs par tour";
-            this.BtnGenerateMatches.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnGenerateMatches.UseVisualStyleBackColor = true;
-            this.BtnGenerateMatches.Click += new System.EventHandler(this.BtnGenerateMatches_Click);
-            // 
-            // BtnAddPlayer
-            // 
-            this.BtnAddPlayer.Image = global::RoundRobin.Properties.Resources.Ajouter_64;
-            this.BtnAddPlayer.Location = new System.Drawing.Point(245, 3);
-            this.BtnAddPlayer.Name = "BtnAddPlayer";
-            this.BtnAddPlayer.Size = new System.Drawing.Size(96, 76);
-            this.BtnAddPlayer.TabIndex = 3;
-            this.BtnAddPlayer.Text = "&Ajouter";
-            this.BtnAddPlayer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnAddPlayer.UseVisualStyleBackColor = true;
-            this.BtnAddPlayer.Click += new System.EventHandler(this.BtnAddPlayer_Click);
-            // 
-            // BtnNextRound
-            // 
-            this.BtnNextRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnNextRound.Image = global::RoundRobin.Properties.Resources.Fleche_Droite_64;
-            this.BtnNextRound.Location = new System.Drawing.Point(322, 12);
-            this.BtnNextRound.Name = "BtnNextRound";
-            this.BtnNextRound.Size = new System.Drawing.Size(74, 54);
-            this.BtnNextRound.TabIndex = 9;
-            this.BtnNextRound.UseVisualStyleBackColor = true;
-            this.BtnNextRound.Click += new System.EventHandler(this.BtnNextRound_Click);
-            // 
-            // BtnPreviousRound
-            // 
-            this.BtnPreviousRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnPreviousRound.Image = global::RoundRobin.Properties.Resources.Fleche_Gauche_64;
-            this.BtnPreviousRound.Location = new System.Drawing.Point(86, 13);
-            this.BtnPreviousRound.Name = "BtnPreviousRound";
-            this.BtnPreviousRound.Size = new System.Drawing.Size(74, 54);
-            this.BtnPreviousRound.TabIndex = 8;
-            this.BtnPreviousRound.UseVisualStyleBackColor = true;
-            this.BtnPreviousRound.Click += new System.EventHandler(this.BtnPreviousRound_Click);
-            // 
-            // ColMatch
-            // 
-            this.ColMatch.DataPropertyName = "Match";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColMatch.DefaultCellStyle = dataGridViewCellStyle6;
-            this.ColMatch.Frozen = true;
-            this.ColMatch.HeaderText = "Match";
-            this.ColMatch.Name = "ColMatch";
-            this.ColMatch.ReadOnly = true;
-            this.ColMatch.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ColMatch.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ColMatch.Width = 80;
-            // 
-            // ColJoueur1
-            // 
-            this.ColJoueur1.DataPropertyName = "Joueur1";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.ColJoueur1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.ColJoueur1.Frozen = true;
-            this.ColJoueur1.HeaderText = "Joueur1";
-            this.ColJoueur1.Name = "ColJoueur1";
-            this.ColJoueur1.ReadOnly = true;
-            this.ColJoueur1.Width = 280;
-            // 
-            // ColVS
-            // 
-            this.ColVS.DataPropertyName = "VS";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColVS.DefaultCellStyle = dataGridViewCellStyle8;
-            this.ColVS.Frozen = true;
-            this.ColVS.HeaderText = "VS";
-            this.ColVS.Name = "ColVS";
-            this.ColVS.ReadOnly = true;
-            this.ColVS.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ColVS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColVS.Width = 40;
-            // 
-            // ColJoueur2
-            // 
-            this.ColJoueur2.DataPropertyName = "Joueur2";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColJoueur2.DefaultCellStyle = dataGridViewCellStyle9;
-            this.ColJoueur2.Frozen = true;
-            this.ColJoueur2.HeaderText = "Joueur2";
-            this.ColJoueur2.Name = "ColJoueur2";
-            this.ColJoueur2.ReadOnly = true;
-            this.ColJoueur2.Width = 280;
-            // 
-            // ColResultat
-            // 
-            this.ColResultat.DataPropertyName = "Resultat";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.ColResultat.DefaultCellStyle = dataGridViewCellStyle10;
-            this.ColResultat.Frozen = true;
-            this.ColResultat.HeaderText = "Résultat";
-            this.ColResultat.Name = "ColResultat";
-            this.ColResultat.ReadOnly = true;
-            this.ColResultat.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ColResultat.Width = 280;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 709);
+            this.ClientSize = new System.Drawing.Size(1016, 709);
             this.Controls.Add(this.TabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -574,14 +622,12 @@ namespace RoundRobin
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMatches)).EndInit();
             this.TabPageSetup.ResumeLayout(false);
             this.TabPageSetup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.toolStripStatusLabelCopyright.ResumeLayout(false);
             this.toolStripStatusLabelCopyright.PerformLayout();
             this.GroupBoxTournamentInfo.ResumeLayout(false);
             this.GroupBoxTournamentInfo.PerformLayout();
             this.TabControl1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -606,7 +652,6 @@ namespace RoundRobin
         private DataGridView DataGridViewMatches;
         private TabPage TabPageSetup;
         private StatusStrip toolStripStatusLabelCopyright;
-        private PictureBox pictureBox1;
         private Button BtnCheckAll;
         private Button BtnUncheckAll;
         private Button BtnLoadFromFile;
@@ -621,17 +666,21 @@ namespace RoundRobin
         private Button BtnGenerateMatches;
         private Button BtnAddPlayer;
         private TextBox TxtPlayerName;
-        private CheckedListBox ListBoxPlayers;
         private Label Label1;
         private TabControl TabControl1;
-        private GroupBox groupBox1;
-        private Label label3;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private DataGridViewTextBoxColumn ColMatch;
         private DataGridViewTextBoxColumn ColJoueur1;
         private DataGridViewTextBoxColumn ColVS;
         private DataGridViewTextBoxColumn ColJoueur2;
         private DataGridViewTextBoxColumn ColResultat;
+        private TextBox TxtFilterPlayers;
+        private Button BtnClearFilter;
+        private Label LabelAllPlayers;
+        private Label LabelPresentPlayers;
+        private ListBox ListBoxAllPlayers;
+        private ListBox ListBoxPresentPlayers;
+        private PictureBox PictureBox1;
     }
 }
 
